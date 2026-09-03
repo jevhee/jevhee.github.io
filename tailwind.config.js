@@ -8,16 +8,18 @@ module.exports = {
     "./data/**/*.js"
   ],
   safelist: [
-    'w-2', 'h-2', 'w-2.5', 'h-2.5',
+    'w-1.5', 'h-1.5', 'w-2', 'h-2', 'w-2.5', 'h-2.5',
     {
       pattern: /^(bg|text|border)-macchiato-(lavender|blue|sapphire|sky|teal|green|yellow|peach|maroon|red|mauve|pink|flamingo|rosewater|base|mantle|crust|surface0|surface1|surface2|overlay0|subtext0|subtext1|text)$/,
       variants: ['hover', 'group-hover'],
     },
     {
       pattern: /^bg-macchiato-(lavender|blue|sapphire|sky|teal|green|yellow|peach|maroon|red|mauve|pink|flamingo|rosewater|base|mantle|crust|surface0|surface1|surface2|overlay0|subtext0|subtext1|text)\/15$/,
+      variants: ['hover', 'group-hover'],
     },
     {
       pattern: /^border-macchiato-(lavender|blue|sapphire|sky|teal|green|yellow|peach|maroon|red|mauve|pink|flamingo|rosewater|base|mantle|crust|surface0|surface1|surface2|overlay0|subtext0|subtext1|text)\/25$/,
+      variants: ['hover', 'group-hover'],
     }
   ],
   theme: {

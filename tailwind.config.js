@@ -7,6 +7,13 @@ module.exports = {
     "./scripts/**/*.js",
     "./data/**/*.js"
   ],
+  safelist: [
+    'w-2', 'h-2', 'w-2.5', 'h-2.5',
+    {
+      pattern: /^(bg|text|border)-macchiato-(lavender|blue|sapphire|sky|teal|green|yellow|peach|maroon|red|mauve|pink|flamingo|rosewater|surface1)/,
+      variants: ['hover', 'group-hover'],
+    }
+  ],
   theme: {
     extend: {
       colors: {

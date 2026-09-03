@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Jevi Saputra - Mobile Software Engineer</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="dist/output.css" />
+</head>
+
+<body
+  class="bg-macchiato-base font-body-md text-macchiato-text selection:bg-macchiato-blue/25 selection:text-macchiato-blue min-h-screen transition-colors duration-300">
+
+  <div id="header-container"></div>
+
+  <main class="w-full pt-16 bg-macchiato-base transition-colors duration-300">
+    <div class="max-w-[580px] mx-auto px-gutter-mobile md:px-gutter-desktop py-space-xl">
+      <div class="flex flex-col w-full">
+        <div id="about-container"></div>
+        <div id="journeys-container"></div>
+        <div id="portfolio-container"></div>
+        <div id="posts-container"></div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <!-- Data -->
+  <script src="data/content.js"></script>
+
+  <!-- UI Components -->
+  <script src="components/Header.js"></script>
+  <script src="components/About.js"></script>
+  <script src="components/Journeys.js"></script>
+  <script src="components/Portfolio.js"></script>
+  <script src="components/Posts.js"></script>
+  <script src="components/Footer.js"></script>
+
+  <!-- Logic -->
+  <script src="scripts/theme.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+
+</html>

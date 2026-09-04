@@ -10,11 +10,10 @@ const Journeys = (data) => `
   
   <!-- Timeline Wrapper -->
   <div class="relative pl-10 flex flex-col gap-space-lg">
-    <!-- Vertical Connecting Line -->
-    <div class="absolute left-2.5 top-2 bottom-2 w-[2px] bg-macchiato-surface0 rounded"></div>
     
     ${data.items.map((item, index) => `
       <div class="relative flex flex-col gap-1 group">
+        ${index !== data.items.length - 1 ? `<div class="absolute -left-[30px] top-6 -bottom-[28px] w-[2px] dashed-timeline"></div>` : ''}
         ${index === 0 ? `<div class="absolute -left-3 -right-3 -top-2 -bottom-3 bg-macchiato-mantle rounded-xl pointer-events-none"></div>` : ''}
         <div class="absolute -left-10 top-1 w-5 h-5 rounded-full bg-macchiato-base flex items-center justify-center">
           <div class="w-${item.isEducation ? '2' : '2.5'} h-${item.isEducation ? '2' : '2.5'} rounded-full bg-${item.color}"></div>

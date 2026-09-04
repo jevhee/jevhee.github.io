@@ -84,3 +84,9 @@
     --color-rosewater: 244 219 214;
   }
 }
+@layer components {
+  .dashed-timeline {
+    background-image: radial-gradient(circle, rgb(var(--color-overlay0)) 1px, transparent 1.5px);
+    background-size: 100% 14px;
+  }
+}

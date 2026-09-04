@@ -12,11 +12,7 @@ const SITE_CONTENT = {
     banner: {
       tag: "Mobile Engineering",
       title: "mobile.architecture",
-      subtitle: "scalable · secure by design · reliable apps",
-      chips: [
-        { label: "Android" },
-        { label: "Kotlin" }
-      ]
+      subtitle: "scalable · secure by design · reliable apps"
     },
     status: {
       texts: [
@@ -229,3 +225,5 @@ const SITE_CONTENT = {
   applyColors(SITE_CONTENT.portfolio.projects);
   applyColors(SITE_CONTENT.posts.articles);
 })();
+
+export default SITE_CONTENT;

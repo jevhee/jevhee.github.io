@@ -55,3 +55,5 @@ const initTheme = () => {
     });
   });
 };
+
+export default initTheme;

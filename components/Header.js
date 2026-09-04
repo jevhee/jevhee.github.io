@@ -10,7 +10,7 @@ const Header = (data) => `
     <div class="flex items-center gap-space-sm">
       <nav class="hidden sm:flex items-center gap-1 font-body-sm text-[13px]">
         ${data.navLinks.map(link => `
-          <a class="px-2.5 py-1 rounded-lg text-macchiato-subtext0 hover:text-${link.color} hover:bg-macchiato-mantle transition-colors" href="${link.href}">
+          <a class="px-2.5 py-1 rounded-lg text-macchiato-subtext0 hover:text-${link.color} hover:bg-macchiato-surface0/50 transition-colors" href="${link.href}">
             ${link.label}
           </a>
         `).join('')}
@@ -49,7 +49,7 @@ const Header = (data) => `
         </button>
         <div class="absolute right-0 top-12 w-48 py-2 rounded-xl bg-macchiato-mantle border border-macchiato-surface0/80 shadow-lg backdrop-blur-xl flex flex-col z-50 transition-all duration-300 origin-top-right opacity-0 invisible -translate-y-2 scale-95" id="mobile-dropdown">
           ${data.navLinks.map(link => `
-            <a class="flex items-center gap-2 px-3 py-2 font-body-sm text-macchiato-text hover:text-${link.color} hover:bg-macchiato-surface0 transition-colors" href="${link.href}" onclick="document.getElementById('mobile-menu-btn').click();">
+            <a class="flex items-center gap-2 px-3 py-2 font-body-sm text-macchiato-text hover:text-${link.color} hover:bg-macchiato-surface0/70 transition-colors" href="${link.href}" onclick="document.getElementById('mobile-menu-btn').click();">
               <span class="material-symbols-outlined text-[16px] text-${link.color}">${link.label === 'About' ? 'person' :
     link.label === 'Journeys' ? 'timeline' :
       link.label === 'Portfolio' ? 'devices' : 'edit_note'
@@ -70,3 +70,5 @@ const Header = (data) => `
   </div>
 </header>
 `;
+
+export default Header;

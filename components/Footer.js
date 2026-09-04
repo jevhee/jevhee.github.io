@@ -9,3 +9,5 @@ const Footer = (data) => `
   </div>
 </footer>
 `;
+
+export default Footer;

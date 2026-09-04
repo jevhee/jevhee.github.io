@@ -10,7 +10,7 @@ const Posts = (data) => `
   
   <div class="flex flex-col gap-space-xs">
     ${data.articles.map(article => `
-      <a class="p-space-sm -mx-space-sm rounded-xl hover:bg-macchiato-mantle/80 flex flex-col gap-1 transition-all group" href="${article.url}">
+      <a class="p-space-sm -mx-space-sm rounded-xl hover:bg-macchiato-surface0/70 flex flex-col gap-1 transition-all group" href="${article.url}">
         <div class="flex items-baseline justify-between gap-space-sm">
           <span class="font-headline-sm text-headline-sm text-macchiato-text group-hover:text-macchiato-blue transition-colors">
             ${article.title}
@@ -27,3 +27,5 @@ const Posts = (data) => `
   </div>
 </section>
 `;
+
+export default Posts;

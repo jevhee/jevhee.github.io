@@ -1,7 +1,9 @@
+import Chip from './ui/Chip.js';
+
 const About = (data) => `
 <section class="flex flex-col gap-space-lg scroll-mt-20" id="about">
   <!-- Monogram Workspace Banner -->
-  <div class="relative w-full h-32 sm:h-36 rounded-xl overflow-hidden border border-macchiato-surface0/70 bg-macchiato-mantle shadow-sm flex items-center justify-between p-space-md select-none group"
+  <div class="relative w-full h-32 sm:h-36 rounded-xl overflow-hidden bg-macchiato-mantle flex items-center justify-between p-space-md select-none group"
        onmousemove="
          const rect = this.getBoundingClientRect();
          const x = event.clientX - rect.left;
@@ -37,14 +39,6 @@ const About = (data) => `
         <span class="font-code-inline text-[11px] text-macchiato-subtext0">${data.banner.subtitle}</span>
       </div>
     </div>
-    
-    <div class="relative z-10 hidden sm:flex flex-col items-end gap-1.5">
-      ${data.banner.chips.map(chip => `
-        <div class="flex items-center gap-1 px-2 py-0.5 rounded bg-macchiato-surface0/80 border border-macchiato-surface1/70 font-code-inline text-[11px] text-${chip.color} shadow-xs font-medium">
-          <span class="w-1.5 h-1.5 rounded-full bg-${chip.color}"></span>${chip.label}
-        </div>
-      `).join('')}
-    </div>
   </div>
 
   <div class="flex flex-col gap-space-xs">
@@ -55,7 +49,9 @@ const About = (data) => `
     </div>
     <div class="flex items-center gap-space-md mt-space-2xs">
       <div class="relative shrink-0 w-16 h-16 rounded-full overflow-hidden bg-macchiato-mantle shadow-xs ring-1 ring-macchiato-surface1">
-        <img alt="${data.profile.name}" class="w-full h-full object-cover" src="${data.profile.image}">
+        <div class="w-full h-full rounded-full overflow-hidden bg-macchiato-surface0 relative">
+          <img alt="${data.profile.name} - Profile Picture" class="w-full h-full object-cover object-top" src="${data.profile.image}" decoding="async" fetchpriority="high">
+        </div>
       </div>
       <div class="flex flex-col">
         <h1 class="font-headline-lg text-headline-lg text-macchiato-text tracking-tight">${data.profile.name}</h1>
@@ -73,11 +69,7 @@ const About = (data) => `
   <div class="flex flex-col gap-space-xs">
     <span class="font-label-sm text-label-sm text-macchiato-overlay0 uppercase tracking-wider font-code-inline font-medium">Core Tech Stack</span>
     <div class="flex flex-wrap gap-space-2xs">
-      ${data.coreStack.map(stack => `
-        <span class="inline-flex items-center gap-1.5 px-space-xs py-1 rounded bg-macchiato-mantle font-code-inline text-label-sm text-macchiato-text border border-macchiato-surface0/80 shadow-xs">
-          <span class="w-1.5 h-1.5 rounded-full bg-${stack.color}"></span>${stack.label}
-        </span>
-      `).join('')}
+      ${data.coreStack.map(stack => Chip({ label: stack.label, color: stack.color })).join('')}
     </div>
   </div>
 
@@ -101,3 +93,5 @@ const About = (data) => `
   </div>
 </section>
 `;
+
+export default About;

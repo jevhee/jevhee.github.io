@@ -1,3 +1,12 @@
+import SITE_CONTENT from '../data/content.js';
+import Header from '../components/Header.js';
+import About from '../components/About.js';
+import Journeys from '../components/Journeys.js';
+import Portfolio from '../components/Portfolio.js';
+import Posts from '../components/Posts.js';
+import Footer from '../components/Footer.js';
+import initTheme from './theme.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   // Inject components into DOM
   document.getElementById('header-container').innerHTML = Header(SITE_CONTENT.header);

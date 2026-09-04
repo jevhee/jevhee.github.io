@@ -1,3 +1,5 @@
+import Badge from './ui/Badge.js';
+
 const Portfolio = (data) => `
 <section class="flex flex-col gap-space-lg scroll-mt-20" id="portfolio">
   <div class="flex items-baseline justify-between">
@@ -10,7 +12,7 @@ const Portfolio = (data) => `
   
   <div class="flex flex-col gap-space-md">
     ${data.projects.map(project => `
-      <article class="p-space-md rounded-xl bg-macchiato-mantle hover:bg-macchiato-surface0/50 transition-all duration-200 flex flex-col gap-space-sm group shadow-xs">
+      <article class="p-space-md rounded-xl bg-macchiato-mantle hover:bg-macchiato-surface0/70 transition-all duration-200 flex flex-col gap-space-sm group shadow-xs">
         <div class="flex items-start justify-between">
           <div class="flex items-center gap-space-sm">
             <div class="flex flex-col">
@@ -38,15 +40,13 @@ const Portfolio = (data) => `
           ${project.description}
         </p>
         <div class="relative w-full h-36 rounded-lg overflow-hidden bg-macchiato-crust flex items-center justify-center border border-macchiato-surface0/60">
-          <img alt="${project.title} preview" class="w-full h-full object-cover" src="${project.image}">
-          ${project.badge ? `
-            <span class="absolute bottom-2 right-3 font-code-inline text-label-sm text-macchiato-text px-2 py-0.5 rounded bg-macchiato-surface0 shadow-xs">
-              ${project.badge}
-            </span>
-          ` : ''}
+          <img alt="${project.title} preview" class="w-full h-full object-cover" src="${project.image}" loading="lazy" decoding="async">
+          ${project.badge ? Badge({ text: project.badge }) : ''}
         </div>
       </article>
     `).join('')}
   </div>
 </section>
 `;
+
+export default Portfolio;

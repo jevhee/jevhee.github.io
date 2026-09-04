@@ -14,7 +14,7 @@ const Journeys = (data) => `
     ${data.items.map((item, index) => `
       <div class="relative flex flex-col gap-1 group">
         ${index !== data.items.length - 1 ? `<div class="absolute -left-[30px] top-6 -bottom-[28px] w-[2px] dashed-timeline"></div>` : ''}
-        ${index === 0 ? `<div class="absolute -left-3 -right-3 -top-2 -bottom-3 bg-macchiato-mantle rounded-xl pointer-events-none"></div>` : ''}
+        ${index === 0 ? `<div class="absolute -left-3 -right-3 -top-2 -bottom-3 bg-macchiato-surface0/40 rounded-xl pointer-events-none"></div>` : ''}
         <div class="absolute -left-10 top-1 w-5 h-5 rounded-full bg-macchiato-base flex items-center justify-center">
           <div class="w-${item.isEducation ? '2' : '2.5'} h-${item.isEducation ? '2' : '2.5'} rounded-full bg-${item.color}"></div>
         </div>
@@ -33,3 +33,5 @@ const Journeys = (data) => `
   </div>
 </section>
 `;
+
+export default Journeys;

@@ -3,11 +3,7 @@ const initTheme = () => {
   const themeBtn = document.getElementById('theme-toggle-btn');
 
   function updateIcon(isDark) {
-    if (!themeBtn) return;
-    const iconSpan = themeBtn.querySelector('.material-symbols-outlined');
-    if (iconSpan) {
-      iconSpan.textContent = isDark ? 'dark_mode' : 'light_mode';
-    }
+    // Icon switching is now purely handled via CSS classes `.dark:translate...` on two separate span elements in Header.js
   }
 
   function setTheme(theme) {

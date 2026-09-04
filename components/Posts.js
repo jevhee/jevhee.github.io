@@ -1,7 +1,4 @@
 const Posts = (data) => `
-<!-- Section Divider -->
-<div class="w-full h-px bg-macchiato-surface0/60 my-space-2xl"></div>
-
 <section class="flex flex-col gap-space-lg scroll-mt-20" id="posts">
   <div class="flex items-baseline justify-between">
     <div class="flex items-center gap-space-xs">

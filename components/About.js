@@ -89,8 +89,11 @@ const About = (data) => `
     </div>
     <div class="flex flex-wrap items-center gap-space-sm">
       ${data.socialLinks.map(link => `
-        <a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-code-inline text-label-sm font-medium transition-all duration-200 shadow-xs border border-${link.color}/30 bg-macchiato-mantle text-macchiato-text hover:bg-${link.color}/15 hover:border-${link.color} hover:text-${link.color} group" href="${link.url}" rel="noopener noreferrer" target="_blank">
-          <span class="material-symbols-outlined text-[16px] text-${link.color} group-hover:scale-105 transition-all">${link.icon}</span>
+        <a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-code-inline text-[12px] font-medium transition-all duration-200 shadow-xs bg-macchiato-mantle text-macchiato-text hover:bg-${link.color}/15 hover:text-${link.color} group" href="${link.url}" rel="noopener noreferrer" target="_blank">
+          ${link.iconSvg ?
+    `<span class="text-${link.color} group-hover:scale-105 transition-all flex items-center justify-center w-[16px] h-[16px]">${link.iconSvg}</span>` :
+    `<span class="material-symbols-outlined text-[16px] text-${link.color} group-hover:scale-105 transition-all">${link.icon}</span>`
+  }
           <span class="font-medium">${link.label}</span>
         </a>
       `).join('')}

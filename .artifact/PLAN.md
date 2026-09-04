@@ -28,6 +28,16 @@
 2. Apply cache-busting to `index.html` CSS references.
 3. Verify live deployment functionality and styling correctness.
 
-## Phase 6: Maintenance & Content Updates (Ongoing)
+## Phase 6: Dynamic Color Assignment ✅
+1. Implement a utility function to automatically assign colors from the Catppuccin palette to items (e.g., tags, chips, nav links) without duplicates.
+2. Remove manual `color` property assignments from `data/content.js`.
+3. Update UI components to use the dynamically assigned colors.
+
+## Phase 7: Typing Animation for Status
+1. Modify `data/content.js` to support multiple strings in `about.status.texts`.
+2. Update `components/About.js` to render a container for the animated text.
+3. Add a typing effect utility in `scripts/app.js` (or a dedicated script) to rotate and animate the texts.
+
+## Phase 8: Maintenance & Content Updates (Ongoing)
 - To update content, only `data/content.js` needs to be modified.
 - To modify styles, update components and run `bun run build:css`.

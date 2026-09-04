@@ -50,7 +50,7 @@ const About = (data) => `
   <div class="flex flex-col gap-space-xs">
     <div class="flex items-center gap-space-xs">
       <span class="inline-flex items-center gap-1.5 px-space-xs py-0.5 rounded-full bg-macchiato-mantle text-macchiato-teal font-label-sm text-label-sm border border-macchiato-teal/30 font-medium">
-        <span class="w-1.5 h-1.5 rounded-full bg-macchiato-teal animate-ping"></span>${data.status.text}
+        <span class="w-1.5 h-1.5 rounded-full bg-macchiato-teal animate-ping"></span><span id="typing-status"></span><span id="typing-cursor" class="animate-pulse opacity-70">|</span>
       </span>
     </div>
     <div class="flex items-center gap-space-md mt-space-2xs">

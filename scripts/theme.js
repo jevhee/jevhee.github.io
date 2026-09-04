@@ -14,13 +14,13 @@ const initTheme = () => {
       localStorage.setItem('theme', 'dark');
       updateIcon(true);
       if (taglineEl) taglineEl.textContent = 'Macchiato';
-      if (faviconEl) faviconEl.href = 'assets/favicon-macchiato.svg';
+      if (faviconEl) faviconEl.href = 'assets/favicon-latte.svg';
     } else {
       htmlEl.classList.remove('dark');
       localStorage.setItem('theme', 'light');
       updateIcon(false);
       if (taglineEl) taglineEl.textContent = 'Latte';
-      if (faviconEl) faviconEl.href = 'assets/favicon-latte.svg';
+      if (faviconEl) faviconEl.href = 'assets/favicon-macchiato.svg';
     }
   }
 

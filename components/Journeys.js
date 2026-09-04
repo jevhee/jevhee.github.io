@@ -9,23 +9,24 @@ const Journeys = (data) => `
   </div>
   
   <!-- Timeline Wrapper -->
-  <div class="relative pl-6 flex flex-col gap-space-lg">
+  <div class="relative pl-10 flex flex-col gap-space-lg">
     <!-- Vertical Connecting Line -->
     <div class="absolute left-2.5 top-2 bottom-2 w-[2px] bg-macchiato-surface0 rounded"></div>
     
-    ${data.items.map(item => `
+    ${data.items.map((item, index) => `
       <div class="relative flex flex-col gap-1 group">
-        <div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-macchiato-base flex items-center justify-center">
-          <div class="w-${item.isEducation ? '2' : '2.5'} h-${item.isEducation ? '2' : '2.5'} rounded-full bg-${item.color} ${item.isPulse ? 'shadow-[0_0_8px_rgba(139,213,202,0.6)]' : ''}"></div>
+        ${index === 0 ? `<div class="absolute -left-3 -right-3 -top-2 -bottom-3 bg-macchiato-mantle rounded-xl pointer-events-none"></div>` : ''}
+        <div class="absolute -left-10 top-1 w-5 h-5 rounded-full bg-macchiato-base flex items-center justify-center">
+          <div class="w-${item.isEducation ? '2' : '2.5'} h-${item.isEducation ? '2' : '2.5'} rounded-full bg-${item.color}"></div>
         </div>
-        <div class="flex items-baseline justify-between">
+        <div class="flex items-baseline justify-between relative z-10">
           <span class="font-headline-sm text-headline-sm text-macchiato-text">
             ${item.role}
           </span>
           <span class="font-code-inline text-label-sm text-${item.isPulse ? item.color : 'macchiato-overlay0'} ${item.isPulse ? 'font-medium' : ''}">${item.date}</span>
         </div>
-        <span class="font-body-sm text-body-sm text-macchiato-subtext1 font-medium">${item.company}</span>
-        <p class="font-body-md text-body-md text-macchiato-subtext0 mt-1">
+        <span class="font-body-sm text-body-sm text-macchiato-subtext1 font-medium relative z-10">${item.company}</span>
+        <p class="font-body-md text-body-md text-macchiato-subtext0 mt-1 relative z-10">
           ${item.description}
         </p>
       </div>

@@ -9,4 +9,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize interactions
   initTheme();
+  initTypingStatus();
 });
+
+function initTypingStatus() {
+  const texts = SITE_CONTENT.about.status.texts;
+  const statusEl = document.getElementById('typing-status');
+  if (!statusEl || !texts || texts.length === 0) return;
+
+  let textIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function type() {
+    const currentText = texts[textIndex];
+    
+    if (isDeleting) {
+      statusEl.textContent = currentText.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      statusEl.textContent = currentText.substring(0, charIndex + 1);
+      charIndex++;
+    }
+
+    let typeSpeed = isDeleting ? 30 : 60;
+
+    if (!isDeleting && charIndex === currentText.length) {
+      // Pause at end of sentence
+      typeSpeed = 2000;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      // Pause before starting new sentence
+      isDeleting = false;
+      textIndex = (textIndex + 1) % texts.length;
+      typeSpeed = 500;
+    }
+
+    setTimeout(type, typeSpeed);
+  }
+
+  // Start the typing effect
+  type();
+}

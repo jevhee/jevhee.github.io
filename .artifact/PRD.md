@@ -16,6 +16,7 @@ This project aims to build an austere, highly refined, developer-centric persona
 ## 3. Core Features & Requirements
 ### 3.1. Theming & Aesthetics
 - **Color Modes:** Must support both Dark Mode (Catppuccin Macchiato) and Light Mode (Catppuccin Latte).
+- **Favicon:** Dynamic favicon that adapts to the active theme. Uses `assets/favicon-latte.svg` for Light Mode and `assets/favicon-macchiato.svg` for Dark Mode.
 - **Design Movement:** "Developer Minimalism" - Form follows content. No heavy drop shadows or ornamental fills. Clean typographic hierarchy.
 - **Typography:** 
   - `Geist` for display, headings, and narrative copy.
@@ -34,7 +35,7 @@ This project aims to build an austere, highly refined, developer-centric persona
    - Compact monospace tags (`label-sm`).
    - Mantle background with subtle borders and category-based accent dots.
 4. **Status Indicator (Availability Badge):**
-   - Pulsing 6px dot (Catppuccin Teal) to indicate current availability (e.g., "Available for Q2 projects").
+   - Pulsing 6px dot (Catppuccin Teal) to indicate current status.
 5. **Contact / Input Fields:**
    - Focused inputs transition the border to blue with a zero-offset 2px soft ring.
 

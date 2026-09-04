@@ -19,13 +19,12 @@ const SITE_CONTENT = {
       ]
     },
     status: {
-      text: "Hello World",
-      date: `Q${Math.floor(new Date().getMonth() / 3) + 1} ${new Date().getFullYear()}`
+      text: "Hello World"
     },
     profile: {
       name: "Jevi Saputra",
       role: "Mobile Software Engineer",
-      image: "assets/profile.jpeg",
+      image: "assets/profile.webp",
       bioHtml: `Passionate mobile developer crafting fluid, performant, and delightful experiences across <span class="text-macchiato-text font-medium">Android & iOS</span>, with expertise in <span class="text-macchiato-text font-medium">Kotlin Multiplatform & Flutter</span>. Focused on reactive architectures, offline-first development, performance, and scalable design systems.`
     },
     coreStack: [

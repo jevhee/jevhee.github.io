@@ -12,16 +12,19 @@ const initTheme = () => {
 
   function setTheme(theme) {
     const taglineEl = document.getElementById('footer-tagline');
+    const faviconEl = document.getElementById('favicon');
     if (theme === 'dark') {
       htmlEl.classList.add('dark');
       localStorage.setItem('theme', 'dark');
       updateIcon(true);
       if (taglineEl) taglineEl.textContent = 'Macchiato';
+      if (faviconEl) faviconEl.href = 'assets/favicon-macchiato.svg';
     } else {
       htmlEl.classList.remove('dark');
       localStorage.setItem('theme', 'light');
       updateIcon(false);
       if (taglineEl) taglineEl.textContent = 'Latte';
+      if (faviconEl) faviconEl.href = 'assets/favicon-latte.svg';
     }
   }
 

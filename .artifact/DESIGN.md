@@ -233,7 +233,7 @@ The design system employs a refined `Soft` shape language (`roundedness: 1`). Ra
 - **Color Accents:** Category-based accent dots (e.g., Swift in Peach, Kotlin in Mauve, TypeScript in Blue).
 
 ### 5. Status Indicator (Availability Badge)
-- **Element:** Pulsing 6px dot using Catppuccin Teal (`#8bd5ca` / `#179299`) alongside `label-sm` text: `"Available for Q2 projects"`.
+- **Element:** Pulsing 6px dot using Catppuccin Teal (`#8bd5ca` / `#179299`) alongside `label-sm` text indicating current status.
 
 ### 6. Inputs & Contact Fields
 - **Surface:** `mantle` fill with 1px border. Focus states transition the border to `blue` with a zero-offset 2px soft ring (`rgba(138, 173, 244, 0.25)`).

@@ -52,7 +52,6 @@ const About = (data) => `
       <span class="inline-flex items-center gap-1.5 px-space-xs py-0.5 rounded-full bg-macchiato-mantle text-macchiato-teal font-label-sm text-label-sm border border-macchiato-teal/30 font-medium">
         <span class="w-1.5 h-1.5 rounded-full bg-macchiato-teal animate-ping"></span>${data.status.text}
       </span>
-      <span class="font-label-sm text-label-sm text-macchiato-subtext0 font-code-inline tracking-tight">· ${data.status.date}</span>
     </div>
     <div class="flex items-center gap-space-md mt-space-2xs">
       <div class="relative shrink-0 w-16 h-16 rounded-full overflow-hidden bg-macchiato-mantle shadow-xs ring-1 ring-macchiato-surface1">

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
+  <defs>
+    <!-- Background Gradient: Catppuccin Latte Base to Crust -->
+    <linearGradient id="latteBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#eff1f5"/>
+      <stop offset="100%" stop-color="#e6e9ef"/>
+    </linearGradient>
+
+    <!-- Latte Accent Gradient: Latte Blue (#1e66f5) to Sapphire/Teal (#179299) -->
+    <linearGradient id="latteAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e66f5"/>
+      <stop offset="70%" stop-color="#209fb5"/>
+      <stop offset="100%" stop-color="#179299"/>
+    </linearGradient>
+
+    <!-- Subtle Inner Border -->
+    <linearGradient id="latteBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ccd0da"/>
+      <stop offset="100%" stop-color="#bcc0cc"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle App Icon Container -->
+  <rect x="24" y="24" width="464" height="464" rx="112" fill="url(#latteBg)"/>
+  <rect x="24" y="24" width="464" height="464" rx="112" stroke="url(#latteBorder)" stroke-width="4"/>
+
+  <!-- Subtle Dot Grid Matrix -->
+  <g fill="#bcc0cc" opacity="0.5">
+    <circle cx="96" cy="96" r="3"/>
+    <circle cx="128" cy="96" r="3"/>
+    <circle cx="384" cy="96" r="3"/>
+    <circle cx="416" cy="96" r="3"/>
+    <circle cx="96" cy="416" r="3"/>
+    <circle cx="128" cy="416" r="3"/>
+    <circle cx="384" cy="416" r="3"/>
+    <circle cx="416" cy="416" r="3"/>
+  </g>
+
+  <!-- Mobile Developer Brand Emblem -->
+  <g transform="translate(4, 4)">
+    <!-- Notch Indicator -->
+    <rect x="216" y="86" width="72" height="6" rx="3" fill="#1e66f5" fill-opacity="0.25"/>
+    <circle cx="304" cy="89" r="4" fill="#40a02b" fill-opacity="0.95"/>
+
+    <!-- 'J' Monogram in Latte Blue Gradient -->
+    <path d="M 188 168
+             L 188 286
+             C 188 334, 156 354, 120 354
+             C 96 354, 76 342, 68 330
+             L 86 304
+             C 94 314, 106 322, 122 322
+             C 142 322, 156 310, 156 282
+             L 156 168
+             Z"
+          fill="url(#latteAccent)"/>
+
+    <!-- 'S' Monogram in Catppuccin Latte Dark Text (#4c4f69) -->
+    <path d="M 396 208
+             L 368 226
+             C 356 208, 338 198, 314 198
+             C 288 198, 272 212, 272 230
+             C 272 248, 286 258, 322 268
+             C 368 280, 396 298, 396 332
+             C 396 372, 360 398, 308 398
+             C 270 398, 238 380, 222 352
+             L 250 332
+             C 264 354, 284 366, 308 366
+             C 334 366, 362 354, 362 332
+             C 362 312, 348 302, 310 292
+             C 266 280, 238 262, 238 230
+             C 238 192, 272 166, 314 166
+             C 348 166, 376 182, 396 208
+             Z"
+          fill="#4c4f69"/>
+
+    <!-- Accent dot -->
+    <circle cx="396" cy="168" r="7" fill="#179299"/>
+    <circle cx="396" cy="168" r="14" fill="#179299" fill-opacity="0.2"/>
+
+    <!-- Accent Bar below -->
+    <rect x="180" y="420" width="144" height="6" rx="3" fill="url(#latteAccent)" opacity="0.85"/>
+  </g>
+</svg>

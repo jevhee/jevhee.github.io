@@ -34,6 +34,7 @@ To implement the Catppuccin Macchiato (Dark) and Latte (Light) themes seamlessly
 - Tailwind's `tailwind.config.js` maps these variables to custom utility classes (e.g., `bg-macchiato-blue`).
 - We utilize Tailwind's `darkMode: "class"` feature.
 - **Theme Switcher:** `scripts/theme.js` toggles the `dark` class on the `<html>` tag and saves the preference in `localStorage`.
+- **Dynamic Favicon:** The theme switcher dynamically updates the `<link rel="icon">` in `index.html` to point to `assets/favicon-macchiato.svg` (Dark) or `assets/favicon-latte.svg` (Light) depending on the active theme.
 
 ## 4. Typography Integration
 - **Geist (Sans-serif):** Headings and body copy.

@@ -1,10 +1,10 @@
 const Header = (data) => `
 <header class="fixed top-0 left-0 right-0 z-50 bg-macchiato-mantle/50 backdrop-blur-3xl">
   <div class="h-16 max-w-[700px] mx-auto px-gutter-mobile md:px-gutter-desktop flex items-center justify-between">
-    <a class="flex items-center" href="#about" aria-label="Home">
-      <div class="relative w-8 h-8 flex items-center justify-center overflow-hidden">
-        <img src="assets/favicon-macchiato.svg" alt="${data.name}" class="absolute w-full h-full transition-all duration-300 transform scale-100 opacity-100 dark:scale-0 dark:opacity-0">
-        <img src="assets/favicon-latte.svg" alt="${data.name}" class="absolute w-full h-full transition-all duration-300 transform scale-0 opacity-0 dark:scale-100 dark:opacity-100">
+    <a class="flex items-center group" href="#about" aria-label="Home">
+      <div class="relative w-8 h-8 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-12">
+        <img src="assets/favicon-macchiato.svg" alt="${data.name}" class="absolute w-full h-full transition-opacity duration-300 opacity-100 dark:opacity-0">
+        <img src="assets/favicon-latte.svg" alt="${data.name}" class="absolute w-full h-full transition-opacity duration-300 opacity-0 dark:opacity-100">
       </div>
     </a>
     <div class="flex items-center gap-space-sm">

@@ -32,7 +32,7 @@ function initTypingStatus() {
 
   function type() {
     const currentText = texts[textIndex];
-    
+
     if (isDeleting) {
       statusEl.textContent = currentText.substring(0, charIndex - 1);
       charIndex--;

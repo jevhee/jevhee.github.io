@@ -9,14 +9,15 @@ const Journeys = (data) => `
   </div>
   
   <!-- Timeline Wrapper -->
-  <div class="relative pl-10 flex flex-col gap-space-lg">
+  <div class="relative pl-12 pr-4 flex flex-col gap-space-lg">
     
     ${data.items.map((item, index) => `
       <div class="relative flex flex-col gap-1 group">
-        ${index !== data.items.length - 1 ? `<div class="absolute -left-[30px] top-6 -bottom-[28px] w-[2px] dashed-timeline"></div>` : ''}
-        ${index === 0 ? `<div class="absolute -left-3 -right-3 -top-2 -bottom-3 bg-macchiato-surface0/40 rounded-xl pointer-events-none"></div>` : ''}
-        <div class="absolute -left-10 top-1 w-5 h-5 rounded-full bg-macchiato-base flex items-center justify-center">
-          <div class="w-${item.isEducation ? '2' : '2.5'} h-${item.isEducation ? '2' : '2.5'} rounded-full bg-${item.color}"></div>
+        ${index !== data.items.length - 1 ? `<div class="absolute -left-[39px] top-6 -bottom-[28px] w-[2px] dashed-timeline"></div>` : ''}
+        ${index === 0 ? `<div class="absolute -left-4 -right-4 -top-2 -bottom-3 bg-macchiato-mantle shadow-xs rounded-xl pointer-events-none"></div>` : ''}
+        <div class="absolute -left-12 top-1 w-5 h-5 rounded-full bg-macchiato-base flex items-center justify-center">
+          ${item.isPulse ? `<span class="absolute w-3 h-3 rounded-full bg-${item.color} animate-ping"></span>` : ''}
+          <div class="w-${item.isEducation ? '2' : '2.5'} h-${item.isEducation ? '2' : '2.5'} rounded-full bg-${item.color} relative z-10"></div>
         </div>
         <div class="flex items-baseline justify-between relative z-10">
           <span class="font-headline-sm text-headline-sm text-macchiato-text">

@@ -44,7 +44,7 @@ const Portfolio = (data) => `
         <p class="font-body-md text-body-md text-macchiato-subtext0">
           ${project.description}
         </p>
-        <div class="relative w-full h-36 rounded-lg overflow-hidden bg-macchiato-crust flex items-center justify-center border border-macchiato-surface0/60">
+        <div class="relative w-full aspect-[1983/793] rounded-lg overflow-hidden bg-macchiato-crust flex items-center justify-center border border-macchiato-surface0/60">
           <img alt="${project.title} preview" class="w-full h-full object-cover" src="${project.image}" loading="lazy" decoding="async">
           ${project.badge ? Badge({ text: project.badge }) : ''}
         </div>

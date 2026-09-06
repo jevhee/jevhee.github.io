@@ -123,40 +123,14 @@ const SITE_CONTENT = {
     subtitle: "Selected Work",
     projects: [
       {
-        title: "Aura Habit Tracker",
-        stack: "iOS · SwiftUI · WatchKit",
-        description: "Minimalist gesture-driven habit tracking companion. Features zero-lag haptic feedback, custom interactive Lock Screen widgets, SwiftData synchronization, and a lightweight standalone Apple Watch companion.",
-        type: "App",
-        badge: "4.9 ★ (12k ratings)",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAE8yjgXvFDcU9r5YZVbF9lN2NdAcTzpvSj1_itJdQqfeBPVR9Ry6BwdfQRk__Eh5Lfaic9IW9Xl_s6IbskvKsFbYv0QUrJT_0Ce9rJ9tRyIdkSXUeLzHReLKnNAmxbJ6dbVR55K7A8LCVd4nyL89FD7eFvQDD5T8LS_3G4VVT9SVRc06-DPPBytyHB8bUGZaLjNAAnbG1boMcWVSolQFwadfEVKZifNV9iiEjad9vTJq5LBrHmV0ZKHQ",
-        links: {
-          code: "https://github.com",
-          appStore: "https://apple.com/app-store"
-        }
-      },
-      {
-        title: "FinPulse Mobile",
-        stack: "Flutter · Riverpod · Isar DB",
-        description: "Real-time crypto and fiat net-worth tracking engine. Engineered with encrypted biometric authentication, local-first offline syncing, reactive WebSocket order books, and cross-platform native rendering.",
-        type: "App",
-        badge: "50k+ Active Users",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC8e4eW_Tw1iEsGsmx-UcXR-ER4bYLuaieWw6fXVsTywc6mQQIQ4K0abxN0ioebxwBPj1puXfMs8ZcpTENflgav5g58KKu56kmc9q0ELtF5dMheCZx0EVMImNaxGfNNffbPdtczpBkp0ucCA6WUdZCR6NlaHDN08tTyHLJDu65NlSTBIDCXCYQpory5_jbOxzDc2G8gdZHllGV_3tw9YGPGbKJHqPIRMvp12tsAZoiYU0KFkF0ObK_PMg",
-        links: {
-          code: "https://github.com",
-          playStore: "https://play.google.com",
-          appStore: "https://apple.com/app-store"
-        }
-      },
-      {
-        title: "Zenith Reader",
-        stack: "SwiftUI · CoreData · RSS Engine",
-        description: "Typography-first, distraction-free newsfeed reader. Parses unstructured feeds into sanitized Markdown trees with automated local caching, read-later queues, and instant text reflow.",
+        title: "SecureStore",
+        stack: "Android · Kotlin · Jetpack Security",
+        description: "A Kotlin-first encrypted key-value library for Android. Automatically serializes, encrypts, and stores small values using AES-256-GCM and Android Keystore with HMAC-SHA-256 obfuscation.",
         type: "Library",
         badge: "Open Source",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC7zxoONz8OS7Q34K73TRDCt_eC6dGZnN0oVcMIHfCVUIYyE5CDBso8sKvKb9zVQK3_rGXBPEo-M-lgK62z5T5NZtcEzTlXNMLEEDj6CEZGi6q6UKsQKaGOoZxETjSG06bfC2DmT3_iCmOlQ1U10v8JjklBzuUm3jT4hxJNQn3nYh7rlX1efVY7zfhuB4w-8HNk8-SFiWDPfwcwIBzIXwSNqX9t_n0UsDd_CHIh52wg84pZZS5jQCaW9A",
+        image: "https://raw.githubusercontent.com/jevhee/secure-store/main/docs/images/secure-store-banner.png",
         links: {
-          code: "https://github.com",
-          appStore: "https://apple.com/app-store"
+          code: "https://github.com/jevhee/secure-store"
         }
       }
     ]

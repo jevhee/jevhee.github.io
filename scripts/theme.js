@@ -36,13 +36,14 @@ const initTheme = () => {
     setTheme('light');
   }
 
-  // Handle toggle button click
-  if (themeBtn) {
-    themeBtn.addEventListener('click', () => {
+  // Handle toggle button clicks
+  const themeBtns = document.querySelectorAll('.theme-toggle-btn');
+  themeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
       const isDark = htmlEl.classList.contains('dark');
       setTheme(isDark ? 'light' : 'dark');
     });
-  }
+  });
 
   // Smooth scroll behavior for internal hash links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -64,12 +64,13 @@ module.exports = {
         "gutter-desktop": "1.5rem"
       },
       fontFamily: {
-        "body-sm": ["Geist", "-apple-system", "sans-serif"],
-        "body-md": ["Geist", "-apple-system", "sans-serif"],
-        "body-lg": ["Geist", "-apple-system", "sans-serif"],
-        "headline-sm": ["Geist", "-apple-system", "sans-serif"],
-        "headline-md": ["Geist", "-apple-system", "sans-serif"],
-        "headline-lg": ["Geist", "-apple-system", "sans-serif"],
+        "ui": ["system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        "body-sm": ["Lora", "Georgia", "serif"],
+        "body-md": ["Lora", "Georgia", "serif"],
+        "body-lg": ["Lora", "Georgia", "serif"],
+        "headline-sm": ["Lora", "Georgia", "serif"],
+        "headline-md": ["Lora", "Georgia", "serif"],
+        "headline-lg": ["Lora", "Georgia", "serif"],
         "code-inline": ["JetBrains Mono", "monospace"],
         "label-sm": ["JetBrains Mono", "monospace"],
         "label-md": ["JetBrains Mono", "monospace"]

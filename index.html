@@ -7,33 +7,36 @@
   <title>Jevi Saputra - Mobile Software Engineer</title>
   <link id="favicon" rel="icon" type="image/svg+xml" href="assets/favicon-macchiato.svg" />
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    rel="stylesheet" />
-
-  <link rel="stylesheet" href="dist/output.css?v=3" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <link rel="stylesheet" href="dist/output.css?v=4" />
 </head>
 
-<body
-  class="bg-macchiato-base font-body-md text-macchiato-text selection:bg-macchiato-blue/25 selection:text-macchiato-blue min-h-screen transition-colors duration-300">
+<body class="flex items-center justify-center bg-macchiato-crust font-ui text-macchiato-text selection:bg-macchiato-blue/25 selection:text-macchiato-blue min-h-screen transition-colors duration-300 md:p-6 lg:p-8">
 
-  <div id="header-container"></div>
+  <!-- Main Notes App Window -->
+  <div class="flex flex-col md:flex-row w-full max-w-4xl h-screen md:h-[80vh] bg-macchiato-base md:rounded-2xl shadow-2xl overflow-hidden border border-macchiato-surface0/50 relative">
+    
+    <!-- Sidebar -->
+    <div id="sidebar-container" class="w-full md:w-[240px] flex-shrink-0 bg-macchiato-mantle border-b md:border-b-0 md:border-r border-macchiato-surface0/50 flex flex-col z-20"></div>
+    
+    <!-- Main Content Area -->
+    <div class="flex flex-col flex-1 relative overflow-hidden bg-macchiato-base">
+      
+      <!-- Scrollable Content -->
+      <main class="flex-1 overflow-y-auto w-full pt-8 flex flex-col justify-between">
+        <div class="max-w-[750px] mx-auto px-6 md:px-10 py-8 w-full">
+          <div id="page-content" class="flex flex-col gap-8 font-body-md"></div>
+        </div>
+        
+        <!-- Mobile Footer -->
+        <div id="mobile-footer" class="md:hidden w-full mt-auto px-6 py-8 border-t border-dashed border-macchiato-surface1/30 flex flex-col items-center gap-4 bg-macchiato-mantle/30"></div>
+      </main>
 
-  <main class="w-full pt-16 bg-macchiato-base transition-colors duration-300">
-    <div class="max-w-[580px] mx-auto px-gutter-mobile md:px-gutter-desktop py-space-xl">
-      <div class="flex flex-col w-full gap-14">
-        <div id="about-container"></div>
-        <div id="portfolio-container"></div>
-        <div id="journeys-container"></div>
-        <div id="posts-container"></div>
-      </div>
     </div>
-  </main>
-
-  <div id="footer-container"></div>
+  </div>
 
   <!-- App Logic (ES Modules) -->
   <script type="module" src="scripts/app.js"></script>

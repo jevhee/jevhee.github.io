@@ -41,3 +41,9 @@
 ## Phase 8: Maintenance & Content Updates (Ongoing)
 - To update content, only `data/content.js` needs to be modified.
 - To modify styles, update components and run `bun run build:css`.
+
+## Phase 9: Client-Side Routing (Multi-Page SPA)
+1. **HTML Structure Update**: Replace the monolithic section containers (`#about-container`, `#portfolio-container`, etc.) with a single `#page-content` mount point.
+2. **Hash-Based Router**: Implement a simple Vanilla JS router in `scripts/app.js` that listens to `hashchange` events (e.g., `/#about`, `/#portfolio`) to dynamically mount the requested component and unmount the others.
+3. **Active Navigation State**: Update `components/Header.js` or router logic to visually highlight the active menu item corresponding to the current route.
+4. **Lifecycle Hooks**: Re-initialize page-specific scripts (like the typing animation for About) when their corresponding components are mounted.

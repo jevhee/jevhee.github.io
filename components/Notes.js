@@ -12,11 +12,11 @@ const Notes = (data) => `
     <ul class="list-none pl-0 m-0">
       ${data.articles.map((article, index) => `
         <li class="relative pl-6 mb-7 leading-[28px] text-[16px] text-macchiato-text">
-          <span class="absolute left-0 top-0 text-${article.color || 'macchiato-peach'} font-bold">#</span>
+          <span class="absolute left-0 top-0 text-macchiato-peach font-bold">#</span>
           <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="font-bold hover:text-macchiato-blue hover:underline transition-colors">
             ${article.title}
           </a><br>
-          <span class="font-body-md text-[13px] text-macchiato-peach select-none">#${article.category}</span>
+          <span class="font-serif text-[13px] text-macchiato-peach select-none transition-colors">#${article.category}</span>
           <span class="text-macchiato-overlay0 text-[13px]"> · ${article.date} · ${article.readTime}</span>
         </li>
       `).join('')}

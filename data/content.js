@@ -1,12 +1,13 @@
 const SITE_CONTENT = {
   nav: [
-    { label: "Prologue", href: "#about" },
-    { label: "Showcase", href: "#projects" },
-    { label: "Journey", href: "#experience" },
-    { label: "Notes", href: "#articles" }
+    { label: "Prologue", href: "#prologue" },
+    { label: "Showcase", href: "#showcase" },
+    { label: "Journey", href: "#journey" },
+    { label: "Notes", href: "#notes" }
   ],
   prologue: {
-    title: "Hello, I'm Jevi.",
+    title: "Hello, I'm Jevi",
+    subtitle: "The Story So Far",
     statusTexts: [
       "Open to new opportunities",
       "Let's build something new",
@@ -14,13 +15,11 @@ const SITE_CONTENT = {
     ],
     image: "assets/avatar.webp",
     bioHtml: `
-      <p>
-        I've always been fascinated by the process of turning abstract ideas into something you can touch and interact with on a screen. For me, building software is simply about crafting experiences that people can rely on every day.
+      <p class="text-justify">
+        For me, building software is about turning abstract ideas into reliable experiences you can touch and interact with. Just like a good story, a well-crafted application should be engaging, intuitive, and seamlessly guide you from start to finish.
       </p>
-      <p>
-        A well-crafted application is like a good story—engaging, intuitive, and seamlessly guiding you from start to finish. When I'm not bringing ideas to life, I'm usually exploring creative ways to solve everyday problems.
-      </p>
-    `
+    `,
+    location: "Malang, Indonesia"
   },
   journey: {
     title: "Journey",
@@ -65,12 +64,21 @@ const SITE_CONTENT = {
     subtitle: "Creations & Experiments",
     projects: [
       {
-        title: "SecureStore",
+        title: "Secure Store",
         stack: ["Android", "Kotlin", "Jetpack Security"],
-        description: "A Kotlin-first encrypted key-value library for Android. Automatically serializes, encrypts, and stores small values using AES-256-GCM and Android Keystore with HMAC-SHA-256 obfuscation.",
+        description: "Secure key-value storage library for Android using Android Keystore and encryption.",
         image: "https://raw.githubusercontent.com/jevhee/secure-store/main/docs/images/secure-store-banner.png",
         links: {
           code: "https://github.com/jevhee/secure-store"
+        }
+      },
+      {
+        title: "Literal Shield",
+        stack: ["Android", "Gradle Plugin", "Kotlin"],
+        description: "Android Gradle plugin for obfuscating selected string literals in internal modules.",
+        image: "https://raw.githubusercontent.com/jevhee/literal-shield/main/docs/images/literalshield-banner.png",
+        links: {
+          code: "https://github.com/jevhee/literal-shield"
         }
       }
     ]
@@ -148,6 +156,7 @@ const SITE_CONTENT = {
   }
 
   applyColors(SITE_CONTENT.journey.items);
+  applyColors(SITE_CONTENT.notes.articles);
 })();
 
 export default SITE_CONTENT;

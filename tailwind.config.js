@@ -10,13 +10,7 @@ module.exports = {
     "./scripts/**/*.js",
     "./data/**/*.js"
   ],
-  safelist: [
-    'w-1.5', 'h-1.5', 'w-2', 'h-2', 'w-2.5', 'h-2.5',
-    {
-      pattern: /^(bg|text|border)-macchiato-(lavender|blue|sapphire|sky|teal|green|yellow|peach|maroon|red|mauve|pink|flamingo|rosewater|text)$/,
-      variants: ['hover', 'group-hover'],
-    }
-  ],
+
   theme: {
     extend: {
       colors: {
@@ -65,31 +59,10 @@ module.exports = {
       },
       fontFamily: {
         "ui": ["system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
-        "body-sm": ["Lora", "Georgia", "serif"],
-        "body-md": ["Lora", "Georgia", "serif"],
-        "body-lg": ["Lora", "Georgia", "serif"],
-        "headline-sm": ["Lora", "Georgia", "serif"],
-        "headline-md": ["Lora", "Georgia", "serif"],
-        "headline-lg": ["Lora", "Georgia", "serif"],
-        "code-inline": ["JetBrains Mono", "monospace"],
-        "label-sm": ["JetBrains Mono", "monospace"],
-        "label-md": ["JetBrains Mono", "monospace"]
-      },
-      fontSize: {
-        "body-sm": ["13px", { lineHeight: "20px", fontWeight: "400" }],
-        "body-md": ["14px", { lineHeight: "22px", letterSpacing: "-0.005em", fontWeight: "400" }],
-        "body-lg": ["16px", { lineHeight: "26px", letterSpacing: "-0.01em", fontWeight: "400" }],
-        "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }],
-        "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.02em", fontWeight: "600" }],
-        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.03em", fontWeight: "600" }],
-        "code-inline": ["13px", { lineHeight: "18px", fontWeight: "400" }],
-        "label-sm": ["11px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "400" }],
-        "label-md": ["13px", { lineHeight: "18px", letterSpacing: "-0.01em", fontWeight: "500" }]
+        "handwriting": ["Caveat", "cursive"],
+        "serif": ["Lora", "Georgia", "serif"],
+        "mono": ["JetBrains Mono", "monospace"]
       }
     }
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/container-queries'),
-  ],
 }

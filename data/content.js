@@ -1,7 +1,9 @@
+import avatarImg from '../assets/avatar.webp';
+
 const SITE_CONTENT = {
   prologue: {
     title: 'Product-minded software engineer, builder & occasional explorer.',
-    image: 'assets/avatar.webp',
+    image: avatarImg,
     bioHtml: `
       <p class="text-justify">
         I'm a software engineer passionate about building thoughtful and reliable digital products. I see great software as the result of balancing technology, simplicity, and human needs—turning complex ideas into experiences that feel intuitive and effortless. Currently based in Malang, Indonesia.

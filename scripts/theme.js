@@ -1,37 +1,24 @@
 const initTheme = () => {
   const htmlEl = document.documentElement;
-  const themeBtn = document.getElementById('theme-toggle-btn');
-
-  function updateIcon(isDark) {
-    // Icon switching is now purely handled via CSS classes `.dark:translate...` on two separate span elements in Header.js
-  }
 
   function setTheme(theme) {
     const taglineEl = document.getElementById('footer-tagline');
-    const faviconEl = document.getElementById('favicon');
     if (theme === 'dark') {
       htmlEl.classList.add('dark');
       localStorage.setItem('theme', 'dark');
-      updateIcon(true);
       if (taglineEl) taglineEl.textContent = 'Macchiato';
-      if (faviconEl) faviconEl.href = 'assets/favicon-latte.svg';
     } else {
       htmlEl.classList.remove('dark');
       localStorage.setItem('theme', 'light');
-      updateIcon(false);
       if (taglineEl) taglineEl.textContent = 'Latte';
-      if (faviconEl) faviconEl.href = 'assets/favicon-macchiato.svg';
     }
   }
 
   // Initialize theme
   const savedTheme = localStorage.getItem('theme');
-  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   if (savedTheme) {
     setTheme(savedTheme);
-  } else if (systemPrefersDark) {
-    setTheme('dark');
   } else {
     setTheme('light');
   }

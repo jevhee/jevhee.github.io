@@ -58,10 +58,10 @@ module.exports = {
         "gutter-desktop": "1.5rem"
       },
       fontFamily: {
-        "ui": ["system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        "ui": ["Outfit", "Inter"],
         "handwriting": ["Caveat", "cursive"],
-        "serif": ["Lora", "Georgia", "serif"],
-        "mono": ["JetBrains Mono", "monospace"]
+        "serif": ["Outfit", "Inter"],
+        "mono": ["Outfit", "Inter"]
       }
     }
   },

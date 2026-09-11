@@ -89,20 +89,5 @@
     background-image: radial-gradient(circle, rgb(var(--color-overlay0)) 1px, transparent 1.5px);
     background-size: 100% 14px;
   }
-  
-  .ruled-paper {
-    background-image: repeating-linear-gradient(transparent, transparent 27px, rgb(var(--color-surface2) / 0.7) 27px, rgb(var(--color-surface2) / 0.7) 28px);
-    background-attachment: local;
-    line-height: 28px;
-    background-position: 0 0;
-  }
-  
-  .ruled-paper p {
-    margin-bottom: 28px !important;
-  }
-  
-  .ruled-paper p:last-child {
-    margin-bottom: 0 !important;
-  }
 }
 

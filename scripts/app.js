@@ -6,56 +6,46 @@ import Builds from '../components/Builds.js';
 import Log from '../components/Log.js';
 import initTheme from './theme.js';
 
-function renderPage() {
-  const contentEl = document.getElementById('page-content');
-
-  // Set initial state for fade-in animation
-  contentEl.classList.add('opacity-0', 'translate-y-4');
-  contentEl.classList.remove('transition-all', 'duration-500', 'ease-out', 'opacity-100', 'translate-y-0');
-
-  const separator = '<div class="w-full h-12 sm:h-16"></div>';
-
-  const html = `
-    ${Prologue({ ...SITE_CONTENT.prologue, socials: SITE_CONTENT.socials })}
-    ${separator}
-    ${Timeline(SITE_CONTENT.timeline)}
-    ${separator}
-    ${Builds(SITE_CONTENT.builds)}
-    ${separator}
-    ${Log(SITE_CONTENT.log)}
-    ${separator}
-    <section class="flex flex-col items-center pb-20">
-      <h2 class="text-3xl sm:text-3xl font-bold text-macchiato-text tracking-tight leading-tight mb-8">Connect</h2>
-      <div class="flex gap-6">
-        ${SITE_CONTENT.socials ? SITE_CONTENT.socials.map(social => `
-          <a href="${social.url}" target="_blank" class="text-macchiato-overlay0 hover:text-macchiato-blue dark:hover:text-macchiato-yellow transition-colors [&>svg]:w-10 [&>svg]:h-10" title="${social.label}">
-            ${social.iconSvg}
-          </a>
-        `).join('') : ''}
-      </div>
-    </section>
-  `;
-
-  contentEl.innerHTML = html;
-
-  // Force reflow
-  void contentEl.offsetWidth;
-
-  // Add transition classes for fade in
-  contentEl.classList.remove('opacity-0', 'translate-y-4');
-  contentEl.classList.add('transition-all', 'duration-500', 'ease-out', 'opacity-100', 'translate-y-0');
-
-}
+const Connect = (socials) => `
+  <section class="flex flex-col items-center pb-20">
+    <h2 class="text-3xl sm:text-3xl font-bold text-macchiato-text tracking-tight leading-tight mb-6">Connect</h2>
+    <div class="flex gap-6">
+      ${socials.map(social => `
+        <a href="${social.url}" target="_blank" class="text-macchiato-overlay0 hover:text-macchiato-blue dark:hover:text-macchiato-yellow transition-colors [&>svg]:w-10 [&>svg]:h-10" title="${social.label}">
+          ${social.iconSvg}
+        </a>
+      `).join('')}
+    </div>
+    <div class="mt-20 text-[13.5px] text-macchiato-subtext0/80 font-medium">
+      &copy; ${new Date().getFullYear()} Jevi Saputra
+    </div>
+  </section>
+`;
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Inject static components
   const headerContainer = document.getElementById('header-container');
   if (headerContainer) headerContainer.innerHTML = Header();
 
-  // Initialize interactions
-  initTheme();
+  const contentEl = document.getElementById('page-content');
+  if (contentEl) {
+    const separator = '<div class="w-full h-12 sm:h-16"></div>';
 
-  // Initial render
-  renderPage();
+    contentEl.innerHTML = [
+      Prologue({ ...SITE_CONTENT.prologue, socials: SITE_CONTENT.socials }),
+      Timeline(SITE_CONTENT.timeline),
+      Builds(SITE_CONTENT.builds),
+      Log(SITE_CONTENT.log),
+      Connect(SITE_CONTENT.socials || [])
+    ].join(separator);
+
+    // Fade-in animation
+    contentEl.classList.add('transition-all', 'duration-500', 'ease-out');
+    requestAnimationFrame(() => {
+      contentEl.classList.remove('opacity-0', 'translate-y-4');
+      contentEl.classList.add('opacity-100', 'translate-y-0');
+    });
+  }
+
+  initTheme();
 });
 

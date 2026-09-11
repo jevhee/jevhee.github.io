@@ -15,8 +15,6 @@ module.exports = {
     extend: {
       colors: {
         "macchiato-base": "rgb(var(--color-base) / <alpha-value>)",
-        "macchiato-mantle": "rgb(var(--color-mantle) / <alpha-value>)",
-        "macchiato-crust": "rgb(var(--color-crust) / <alpha-value>)",
         "macchiato-surface0": "rgb(var(--color-surface0) / <alpha-value>)",
         "macchiato-surface1": "rgb(var(--color-surface1) / <alpha-value>)",
         "macchiato-surface2": "rgb(var(--color-surface2) / <alpha-value>)",
@@ -24,20 +22,9 @@ module.exports = {
         "macchiato-subtext0": "rgb(var(--color-subtext0) / <alpha-value>)",
         "macchiato-subtext1": "rgb(var(--color-subtext1) / <alpha-value>)",
         "macchiato-text": "rgb(var(--color-text) / <alpha-value>)",
-        "macchiato-lavender": "rgb(var(--color-lavender) / <alpha-value>)",
         "macchiato-blue": "rgb(var(--color-blue) / <alpha-value>)",
         "macchiato-sapphire": "rgb(var(--color-sapphire) / <alpha-value>)",
-        "macchiato-sky": "rgb(var(--color-sky) / <alpha-value>)",
-        "macchiato-teal": "rgb(var(--color-teal) / <alpha-value>)",
-        "macchiato-green": "rgb(var(--color-green) / <alpha-value>)",
         "macchiato-yellow": "rgb(var(--color-yellow) / <alpha-value>)",
-        "macchiato-peach": "rgb(var(--color-peach) / <alpha-value>)",
-        "macchiato-maroon": "rgb(var(--color-maroon) / <alpha-value>)",
-        "macchiato-red": "rgb(var(--color-red) / <alpha-value>)",
-        "macchiato-mauve": "rgb(var(--color-mauve) / <alpha-value>)",
-        "macchiato-pink": "rgb(var(--color-pink) / <alpha-value>)",
-        "macchiato-flamingo": "rgb(var(--color-flamingo) / <alpha-value>)",
-        "macchiato-rosewater": "rgb(var(--color-rosewater) / <alpha-value>)",
       },
       borderRadius: {
         DEFAULT: "0.25rem",
@@ -62,6 +49,21 @@ module.exports = {
         "handwriting": ["Caveat", "cursive"],
         "serif": ["Outfit", "Inter"],
         "mono": ["Outfit", "Inter"]
+      },
+      keyframes: {
+        wave: {
+          '0%': { transform: 'rotate(0.0deg)' },
+          '10%': { transform: 'rotate(-14.0deg)' },
+          '20%': { transform: 'rotate(8.0deg)' },
+          '30%': { transform: 'rotate(-14.0deg)' },
+          '40%': { transform: 'rotate(4.0deg)' },
+          '50%': { transform: 'rotate(-10.0deg)' },
+          '60%': { transform: 'rotate(0.0deg)' },
+          '100%': { transform: 'rotate(0.0deg)' },
+        }
+      },
+      animation: {
+        wave: 'wave 2s infinite',
       }
     }
   },

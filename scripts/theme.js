@@ -1,34 +1,18 @@
 const initTheme = () => {
   const htmlEl = document.documentElement;
 
-  function setTheme(theme) {
-    const taglineEl = document.getElementById('footer-tagline');
-    if (theme === 'dark') {
-      htmlEl.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-      if (taglineEl) taglineEl.textContent = 'Macchiato';
-    } else {
-      htmlEl.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-      if (taglineEl) taglineEl.textContent = 'Latte';
-    }
-  }
+  const setTheme = (theme) => {
+    htmlEl.classList.toggle('dark', theme === 'dark');
+    localStorage.setItem('theme', theme);
+  };
 
   // Initialize theme
-  const savedTheme = localStorage.getItem('theme');
-
-  if (savedTheme) {
-    setTheme(savedTheme);
-  } else {
-    setTheme('light');
-  }
+  setTheme(localStorage.getItem('theme') || 'light');
 
   // Handle toggle button clicks
-  const themeBtns = document.querySelectorAll('.theme-toggle-btn');
-  themeBtns.forEach(btn => {
+  document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      const isDark = htmlEl.classList.contains('dark');
-      setTheme(isDark ? 'light' : 'dark');
+      setTheme(htmlEl.classList.contains('dark') ? 'light' : 'dark');
     });
   });
 

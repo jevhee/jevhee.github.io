@@ -6,15 +6,15 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
   <!-- Primary Meta Tags -->
-  <title>Home | Jevi Saputra | Software Engineer</title>
-  <meta name="title" content="Home | Jevi Saputra | Software Engineer" />
+  <title>Jevi Saputra | Software Engineer</title>
+  <meta name="title" content="Jevi Saputra | Software Engineer" />
   <meta name="description"
     content="I'm a software engineer passionate about building thoughtful and reliable digital products. I see great software as the result of balancing technology, simplicity, and human needs—turning complex ideas into experiences that feel intuitive and effortless. Currently based in Malang, Indonesia." />
 
   <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jevhee.github.io/" />
-  <meta property="og:title" content="Home | Jevi Saputra | Software Engineer" />
+  <meta property="og:title" content="Jevi Saputra | Software Engineer" />
   <meta property="og:description"
     content="I'm a software engineer passionate about building thoughtful and reliable digital products. I see great software as the result of balancing technology, simplicity, and human needs—turning complex ideas into experiences that feel intuitive and effortless. Currently based in Malang, Indonesia." />
   <meta property="og:image" content="https://jevhee.github.io/assets/avatar.webp" />
@@ -22,7 +22,7 @@
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://jevhee.github.io/" />
-  <meta property="twitter:title" content="Home | Jevi Saputra | Software Engineer" />
+  <meta property="twitter:title" content="Jevi Saputra | Software Engineer" />
   <meta property="twitter:description"
     content="I'm a software engineer passionate about building thoughtful and reliable digital products. I see great software as the result of balancing technology, simplicity, and human needs—turning complex ideas into experiences that feel intuitive and effortless. Currently based in Malang, Indonesia." />
   <meta property="twitter:image" content="https://jevhee.github.io/assets/avatar.webp" />
@@ -40,34 +40,23 @@
     rel="stylesheet" />
 
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="dist/output.css?v=4" />
+  <link rel="stylesheet" href="dist/output.css?v=5" />
 </head>
 
 <body
-  class="bg-macchiato-base font-ui text-macchiato-text selection:bg-macchiato-blue/25 selection:text-macchiato-blue min-h-screen transition-colors duration-300">
+  class="bg-macchiato-base bg-dot-pattern font-ui text-macchiato-text selection:bg-macchiato-blue/25 selection:text-macchiato-blue min-h-screen transition-colors duration-300">
 
+  <main class="flex flex-col min-h-screen w-full max-w-4xl mx-auto relative">
 
+    <!-- Header -->
+    <div id="header-container" class="w-full flex-shrink-0 z-50"></div>
 
-
-  <!-- Main Notes App Window -->
-  <div class="flex flex-col w-full max-w-4xl min-h-screen mx-auto relative z-10">
-
-    <!-- Main Content Area -->
-    <div class="flex flex-col flex-1 relative">
-
-      <!-- Scrollable Content -->
-      <main class="flex-1 w-full flex flex-col justify-between relative">
-
-        <!-- Header -->
-        <div id="header-container" class="w-full flex-shrink-0 z-50">
-        </div>
-        <div class="max-w-[680px] mx-auto px-6 md:px-10 py-2 w-full min-h-[50vh]">
-          <div id="page-content" class="flex flex-col gap-8"></div>
-        </div>
-      </main>
-
+    <!-- Page Content -->
+    <div class="max-w-[680px] mx-auto px-6 md:px-10 pt-4 md:pt-6 pb-2 w-full flex-1">
+      <div id="page-content" class="flex flex-col gap-8"></div>
     </div>
-  </div>
+
+  </main>
 
   <!-- App Logic (ES Modules) -->
   <script type="module" src="scripts/app.js"></script>

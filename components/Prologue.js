@@ -8,11 +8,15 @@ const Prologue = (data) => `
     </div>
     
     <h1 class="font-handwriting text-4xl sm:text-5xl font-bold text-macchiato-text tracking-tight leading-tight">${data.title}</h1>
-    ${data.subtitle ? `
+    ${
+      data.subtitle
+        ? `
     <div class="relative prose prose-xl max-w-none text-macchiato-text overflow-hidden">
       <p>${data.subtitle}</p>
     </div>
-    ` : ''}
+    `
+        : ''
+    }
   </div>
 
   <div class="flex flex-col items-start mb-2 w-full">

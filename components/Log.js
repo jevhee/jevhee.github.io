@@ -9,7 +9,9 @@ const Log = (data) => `
   
   <div class="flex flex-col">
     <ul class="list-none pl-0 m-0">
-      ${data.articles.map((article, index) => `
+      ${data.articles
+        .map(
+          (article, index) => `
         <li class="relative mb-8 last:mb-0 text-base text-macchiato-text flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between border-b border-dashed border-macchiato-surface2 pb-6 last:border-0 last:pb-0">
           <div class="flex-1 flex flex-col">
             <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="font-bold text-lg mb-0.5 hover:underline decoration-2 underline-offset-4 hover:text-macchiato-blue dark:hover:text-macchiato-yellow transition-colors">
@@ -24,7 +26,9 @@ const Log = (data) => `
             ${article.date}
           </div>
         </li>
-      `).join('')}
+      `,
+        )
+        .join('')}
     </ul>
   </div>
 </section>

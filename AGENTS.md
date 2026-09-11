@@ -4,21 +4,14 @@ These rules dictate how the AI agent should behave when working on this reposito
 
 ## General Development Workflow
 
-**Skip Exception**: If modifications are exclusively to Markdown files (`.md`) or non-project documentation, you MUST skip the CSS building and formatting steps below.
-
-1. **Proactive CSS Build**: Whenever you modify HTML, JS, or CSS files that introduce or remove Tailwind classes, or change UI layout, you MUST proactively run `bun run build:css` to ensure changes are immediately visible. Do not wait for deployment.
-2. **Proactive Formatting**: Immediately after modifying any code files (HTML, JS, CSS, config), you MUST run `bun run format` to keep the codebase perfectly neat and Tailwind classes sorted.
+1. **Development Server**: Use `bun run dev` to start Vite. Vite handles CSS processing and HMR automatically. Do not manually build CSS.
 
 ## Pre-Deployment & Push Checklist
 
-**Skip Exception**: If modifications are exclusively to Markdown files (`.md`) or non-project documentation, you MUST skip the CSS building and formatting steps below.
-
 Whenever the user asks you to "deploy", "push", or "save" the code, you MUST follow this exact sequence:
 
-1. **Rebuild CSS**: Always run `bun run build:css` first. This ensures that any new Tailwind utility classes added to the HTML or JavaScript components are compiled into `dist/output.css`.
-2. **Clean Up**: Ensure there are no leftover temporary files (like `clean_app.js`) or testing console logs before committing.
-3. **Format Code**: Run `bun run format` to ensure code is neatly structured using Prettier and Tailwind classes are sorted.
-4. **Semantic Commits**: When committing, use strict semantic commit prefixes WITHOUT scopes.
+1. **Clean Up**: Ensure there are no leftover temporary files (like `clean_app.js`) or testing console logs before committing.
+2. **Semantic Commits**: When committing, use strict semantic commit prefixes WITHOUT scopes.
    - **Correct**: `feat: improve spacing`
    - **Incorrect**: `feat(ui): improve spacing`
    - **Follow Common Prefixes (Conventional Commits)**:
@@ -29,8 +22,8 @@ Whenever the user asks you to "deploy", "push", or "save" the code, you MUST fol
      - `refactor:` Code changes that neither fix bugs nor add features.
      - `test:` Adding or fixing tests.
      - `chore:` Maintenance tasks or updating build tasks.
-5. **Sync Remote**: Always run `git pull --rebase` before pushing to avoid conflicts with remote changes.
-6. **Push**: Execute `git push` to deploy the changes. Since this is a GitHub Pages repository, pushing to the `main` branch automatically triggers the deployment.
+3. **Sync Remote**: Always run `git pull --rebase` before pushing to avoid conflicts with remote changes.
+4. **Push**: Execute `git push` to deploy the changes. Since this is a GitHub Pages repository, pushing to the `main` branch automatically triggers the deployment.
 
 ## Design Philosophy & Guidelines
 

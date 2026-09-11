@@ -2,7 +2,16 @@
 
 These rules dictate how the AI agent should behave when working on this repository, especially regarding the deployment and version control process.
 
+## General Development Workflow
+
+**Skip Exception**: If modifications are exclusively to Markdown files (`.md`) or non-project documentation, you MUST skip the CSS building and formatting steps below.
+
+1. **Proactive CSS Build**: Whenever you modify HTML, JS, or CSS files that introduce or remove Tailwind classes, or change UI layout, you MUST proactively run `bun run build:css` to ensure changes are immediately visible. Do not wait for deployment.
+2. **Proactive Formatting**: Immediately after modifying any code files (HTML, JS, CSS, config), you MUST run `bun run format` to keep the codebase perfectly neat and Tailwind classes sorted.
+
 ## Pre-Deployment & Push Checklist
+
+**Skip Exception**: If modifications are exclusively to Markdown files (`.md`) or non-project documentation, you MUST skip the CSS building and formatting steps below.
 
 Whenever the user asks you to "deploy", "push", or "save" the code, you MUST follow this exact sequence:
 

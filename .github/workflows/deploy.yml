@@ -2,7 +2,13 @@ name: Deploy static content to Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
+      - '.prettierignore'
+      - '.prettierrc'
+      - '.husky/**'
   workflow_dispatch:
 
 permissions:
@@ -11,7 +17,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:

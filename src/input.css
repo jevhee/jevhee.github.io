@@ -68,3 +68,45 @@
     background-image: radial-gradient(rgb(var(--color-text) / 0.15) 1px, transparent 1px);
   }
 }
+
+/* View Transitions for Theme Toggle */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.6s;
+  animation-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  mix-blend-mode: normal;
+}
+
+html.transition-ltr::view-transition-old(root),
+html.transition-rtl::view-transition-old(root) {
+  animation: none;
+  z-index: 1;
+}
+
+html.transition-ltr::view-transition-new(root) {
+  animation-name: wipe-ltr;
+  z-index: 2;
+}
+
+html.transition-rtl::view-transition-new(root) {
+  animation-name: wipe-rtl;
+  z-index: 2;
+}
+
+@keyframes wipe-ltr {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes wipe-rtl {
+  from {
+    clip-path: inset(0 0 0 100%);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}

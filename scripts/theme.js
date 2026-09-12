@@ -12,7 +12,20 @@ const initTheme = () => {
   // Handle toggle button clicks
   document.querySelectorAll('.theme-toggle-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
-      setTheme(htmlEl.classList.contains('dark') ? 'light' : 'dark');
+      const isDark = htmlEl.classList.contains('dark');
+      const nextTheme = isDark ? 'light' : 'dark';
+
+      htmlEl.classList.remove('transition-ltr', 'transition-rtl');
+      htmlEl.classList.add(nextTheme === 'dark' ? 'transition-ltr' : 'transition-rtl');
+
+      if (!document.startViewTransition) {
+        setTheme(nextTheme);
+        return;
+      }
+
+      document.startViewTransition(() => {
+        setTheme(nextTheme);
+      });
     });
   });
 

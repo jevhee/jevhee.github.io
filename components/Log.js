@@ -8,23 +8,29 @@ const Log = (data) => `
   </div>
   
   <div class="flex flex-col">
-    <ul class="list-none pl-0 m-0">
+    <ul class="list-none pl-0 m-0 space-y-1 -my-3">
       ${data.articles
         .map(
           (article, index) => `
-        <li class="relative mb-8 last:mb-0 text-base text-macchiato-text flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between border-b border-dashed border-macchiato-surface2 pb-6 last:border-0 last:pb-0">
-          <div class="flex-1 flex flex-col">
-            <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="font-bold text-lg mb-0.5 hover:underline decoration-2 underline-offset-4 hover:text-macchiato-blue dark:hover:text-macchiato-yellow transition-colors">
-              ${article.title}
-            </a>
-            <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 mt-1 text-[13.5px] text-macchiato-subtext0 font-medium">
-              ${article.category ? `<span>${article.category}</span><span class="opacity-30 font-bold text-[12px]">/</span>` : ''}
-              <span>${article.readTime}</span>
+        <li class="relative text-base text-macchiato-text border-b border-dashed border-macchiato-surface2 sm:border-none last:border-none">
+          <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="group flex flex-col sm:flex-row gap-2 sm:gap-4 items-start sm:items-center justify-between py-3 -mx-3 px-3 rounded-lg hover:bg-macchiato-surface1/40 dark:hover:bg-macchiato-surface0/40 transition-colors">
+            <div class="flex-1 flex flex-col">
+              <div class="font-bold text-base sm:text-lg mb-0.5 group-hover:text-macchiato-blue dark:group-hover:text-macchiato-yellow transition-colors flex items-center gap-1.5">
+                ${article.title}
+              </div>
+              <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 mt-0.5 text-[13.5px] text-macchiato-subtext0 font-medium">
+                ${article.category ? `<span>${article.category}</span><span class="opacity-30 font-bold text-[12px]">/</span>` : ''}
+                <span>${article.readTime}</span>
+              </div>
             </div>
-          </div>
-          <div class="shrink-0 mt-3 sm:mt-0 text-[14px] font-medium text-macchiato-subtext0 flex items-center gap-2">
-            ${article.date}
-          </div>
+            <div class="shrink-0 mt-1 sm:mt-0 text-[13.5px] font-medium text-macchiato-subtext0 flex items-center gap-2">
+              <span>${article.date}</span>
+              <span class="sm:hidden flex items-center gap-1 font-bold ml-2 text-macchiato-blue dark:text-macchiato-yellow">
+                Visit 
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </span>
+            </div>
+          </a>
         </li>
       `,
         )

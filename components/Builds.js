@@ -12,7 +12,7 @@ const Builds = (data) => `
       ${data.projects
         .map(
           (project) => `
-        <li class="relative text-base text-macchiato-text flex flex-col sm:flex-row gap-2 sm:gap-4 items-start sm:items-center justify-between py-3 rounded-lg transition-colors border-b border-dashed border-macchiato-surface2 sm:border-none last:border-none">
+        <li class="relative text-base text-macchiato-text flex flex-col sm:flex-row gap-2 sm:gap-4 items-start sm:items-center justify-between py-3 transition-colors border-b border-dashed border-macchiato-surface2 sm:border-none last:border-none">
           
           <div class="flex-1 flex flex-col">
             <div class="font-bold text-base sm:text-lg mb-0.5 text-macchiato-text">

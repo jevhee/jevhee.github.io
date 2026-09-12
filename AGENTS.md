@@ -11,6 +11,7 @@ The primary goals are:
 - Keep changes minimal and predictable.
 - Never perform destructive actions without explicit approval.
 - Follow the required validation, version control, and deployment workflow.
+- Use Bun as the primary package manager and runtime for all commands.
 
 ---
 

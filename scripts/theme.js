@@ -11,12 +11,17 @@ const initTheme = () => {
 
   // Handle toggle button clicks
   document.querySelectorAll('.theme-toggle-btn').forEach((btn) => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
       const isDark = htmlEl.classList.contains('dark');
       const nextTheme = isDark ? 'light' : 'dark';
 
-      htmlEl.classList.remove('transition-ltr', 'transition-rtl');
-      htmlEl.classList.add(nextTheme === 'dark' ? 'transition-ltr' : 'transition-rtl');
+      const x = e.clientX ?? innerWidth / 2;
+      const y = e.clientY ?? innerHeight / 2;
+
+      htmlEl.style.setProperty('--click-x', `${x}px`);
+      htmlEl.style.setProperty('--click-y', `${y}px`);
+
+      htmlEl.classList.add('transition-circle');
 
       if (!document.startViewTransition) {
         setTheme(nextTheme);

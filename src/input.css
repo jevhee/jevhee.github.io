@@ -72,41 +72,26 @@
 /* View Transitions for Theme Toggle */
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 0.6s;
+  animation-duration: 0.7s;
   animation-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
   mix-blend-mode: normal;
 }
 
-html.transition-ltr::view-transition-old(root),
-html.transition-rtl::view-transition-old(root) {
+html.transition-circle::view-transition-old(root) {
   animation: none;
   z-index: 1;
 }
 
-html.transition-ltr::view-transition-new(root) {
-  animation-name: wipe-ltr;
+html.transition-circle::view-transition-new(root) {
+  animation-name: wipe-circle;
   z-index: 2;
 }
 
-html.transition-rtl::view-transition-new(root) {
-  animation-name: wipe-rtl;
-  z-index: 2;
-}
-
-@keyframes wipe-ltr {
+@keyframes wipe-circle {
   from {
-    clip-path: inset(0 100% 0 0);
+    clip-path: circle(0px at var(--click-x, 50%) var(--click-y, 50%));
   }
   to {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes wipe-rtl {
-  from {
-    clip-path: inset(0 0 0 100%);
-  }
-  to {
-    clip-path: inset(0 0 0 0);
+    clip-path: circle(150% at var(--click-x, 50%) var(--click-y, 50%));
   }
 }

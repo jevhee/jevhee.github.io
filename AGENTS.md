@@ -679,6 +679,8 @@ Ensure there are no leftover:
 - Temporary comments.
 - Debug logs.
 - Test artifacts.
+- Unused code, variables, imports, or functions.
+- Dead code paths that are no longer reachable.
 
 Examples:
 

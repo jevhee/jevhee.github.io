@@ -1,6 +1,7 @@
 import SITE_CONTENT from '../data/content.js';
 import Header from '../components/Header.js';
 import Prologue from '../components/Prologue.js';
+import Now from '../components/Now.js';
 import Timeline from '../components/Timeline.js';
 import Builds from '../components/Builds.js';
 import Log from '../components/Log.js';
@@ -17,10 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     contentEl.innerHTML = [
       Prologue(SITE_CONTENT.prologue),
+      Now(SITE_CONTENT.now),
       Timeline(SITE_CONTENT.timeline),
       Builds(SITE_CONTENT.builds),
       Log(SITE_CONTENT.log),
-      Footer(SITE_CONTENT.socials || []),
+      Footer({ socials: SITE_CONTENT.socials || [], siteInfo: SITE_CONTENT.siteInfo }),
     ].join(separator);
 
     // Fade-in animation

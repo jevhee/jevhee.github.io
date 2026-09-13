@@ -1,14 +1,37 @@
 import avatarImg from '../assets/avatar.webp';
 
 const SITE_CONTENT = {
+  siteInfo: {
+    name: 'Jevi Saputra',
+    location: 'Malang',
+  },
   prologue: {
     title: 'Product-minded software engineer, builder & occasional explorer.',
     image: avatarImg,
+    email: 'jevisa40@gmail.com',
     bioHtml: `
       <p class="text-justify">
         I'm a software engineer passionate about building thoughtful and reliable digital products. I see great software as the result of balancing technology, simplicity, and human needs—turning complex ideas into experiences that feel intuitive and effortless. Currently based in Malang, Indonesia.
       </p>
     `,
+  },
+  now: {
+    title: 'Currently',
+    subtitle: 'What I am up to these days.',
+    items: [
+      {
+        icon: 'laptop_mac',
+        text: 'Working as a freelancer on various software engineering projects.',
+      },
+      {
+        icon: 'science',
+        text: 'Exploring new technologies and experimenting with modern tech stacks.',
+      },
+      {
+        icon: 'local_cafe',
+        text: 'Enjoying a good cup of coffee while reading technical blogs.',
+      },
+    ],
   },
   timeline: {
     title: 'Timeline',

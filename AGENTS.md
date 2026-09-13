@@ -303,6 +303,8 @@ Do not create abstractions prematurely.
 
 Do not extract a component or helper solely because code appears only once unless there is a clear maintainability benefit consistent with existing repository practices.
 
+When adding a new major section to the website (e.g., a "Now" section, a new layout block), it MUST be created as a new, separate component file in the `components/` directory. Do not write major UI sections inline in `app.js` or other entry points.
+
 ---
 
 ## 10. Vanilla JavaScript & ES Modules

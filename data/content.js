@@ -67,18 +67,26 @@ const SITE_CONTENT = {
     subtitle: 'Technical writings and engineering notes.',
     articles: [
       {
+        title:
+          'From One Encryption Scheme to Many: Designing a Versioned Encryption Layer on Android',
+        date: 'Sep 2026',
+        readTime: '7 min read',
+        category: 'Mobile Security',
+        url: 'https://jevhee.medium.com/from-one-encryption-scheme-to-many-designing-a-versioned-encryption-layer-on-android-0455f83d1d06',
+      },
+      {
         title: 'Protecting Encryption Keys with Android Keystore',
         date: 'Sep 2026',
         readTime: '5 min read',
         category: 'Mobile Security',
-        url: 'https://medium.com/@jevhee/protecting-encryption-keys-with-android-keystore-6833c818318d?sharedUserId=jevhee',
+        url: 'https://jevhee.medium.com/protecting-encryption-keys-with-android-keystore-6833c818318d?sharedUserId=jevhee',
       },
       {
         title: 'From Static IV to Dynamic IV: Improving Local Storage Encryption on Android',
         date: 'Sep 2026',
         readTime: '7 min read',
         category: 'Mobile Security',
-        url: 'https://medium.com/@jevhee/from-static-iv-to-dynamic-iv-improving-local-storage-encryption-on-android-3ef94cb7b342?sharedUserId=jevhee',
+        url: 'https://jevhee.medium.com/from-static-iv-to-dynamic-iv-improving-local-storage-encryption-on-android-3ef94cb7b342?sharedUserId=jevhee',
       },
     ],
   },

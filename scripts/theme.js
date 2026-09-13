@@ -15,8 +15,14 @@ const initTheme = () => {
       const isDark = htmlEl.classList.contains('dark');
       const nextTheme = isDark ? 'light' : 'dark';
 
-      const x = e.clientX ?? innerWidth / 2;
-      const y = e.clientY ?? innerHeight / 2;
+      let x = e.clientX;
+      let y = e.clientY;
+
+      if (!x || !y) {
+        const rect = btn.getBoundingClientRect();
+        x = rect.left + rect.width / 2;
+        y = rect.top + rect.height / 2;
+      }
 
       htmlEl.style.setProperty('--click-x', `${x}px`);
       htmlEl.style.setProperty('--click-y', `${y}px`);

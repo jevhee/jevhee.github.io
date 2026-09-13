@@ -34,4 +34,52 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   initTheme();
+  initMagneticButtons();
+  initReadingProgress();
 });
+
+function initMagneticButtons() {
+  const magnets = document.querySelectorAll('.magnetic-btn');
+
+  magnets.forEach((btn) => {
+    const inner = btn.querySelector('.magnetic-inner');
+
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+      if (inner) {
+        inner.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+      }
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = 'translate(0px, 0px)';
+      if (inner) {
+        inner.style.transform = 'translate(0px, 0px)';
+      }
+    });
+  });
+}
+
+function initReadingProgress() {
+  const progress = document.getElementById('reading-progress');
+  if (!progress) return;
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+      // Avoid division by zero if page is too short
+      if (docHeight <= 0) return;
+
+      const scrollPercent = scrollTop / docHeight;
+      progress.style.width = `${scrollPercent * 100}%`;
+    },
+    { passive: true },
+  );
+}

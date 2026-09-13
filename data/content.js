@@ -113,6 +113,11 @@ const SITE_CONTENT = {
       },
     ],
   },
+  colophon: {
+    title: 'Colophon',
+    subtitle: 'A brief note on how this site was built.',
+    text: `Designed in Figma, coded in Visual Studio Code. Built with <a href="https://vitejs.dev/" target="_blank" rel="noopener noreferrer">Vite</a> and <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">Tailwind CSS</a> using pure Vanilla JavaScript (no framework). The typography is set in <a href="https://fonts.google.com/specimen/Outfit" target="_blank" rel="noopener noreferrer">Outfit</a> and <a href="https://fonts.google.com/specimen/Caveat" target="_blank" rel="noopener noreferrer">Caveat</a>. The color palette is proudly powered by <a href="https://catppuccin.com/" target="_blank" rel="noopener noreferrer">Catppuccin</a>. Deployed seamlessly via <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.`,
+  },
   socials: [
     {
       label: 'GitHub',

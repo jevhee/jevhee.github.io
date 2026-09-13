@@ -5,6 +5,7 @@ import Now from '../components/Now.js';
 import Timeline from '../components/Timeline.js';
 import Builds from '../components/Builds.js';
 import Log from '../components/Log.js';
+import Colophon from '../components/Colophon.js';
 import Footer from '../components/Footer.js';
 import initTheme from './theme.js';
 
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       Timeline(SITE_CONTENT.timeline),
       Builds(SITE_CONTENT.builds),
       Log(SITE_CONTENT.log),
+      Colophon(SITE_CONTENT.colophon),
       Footer({ socials: SITE_CONTENT.socials || [], siteInfo: SITE_CONTENT.siteInfo }),
     ].join(separator);
 

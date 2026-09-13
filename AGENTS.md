@@ -5,7 +5,7 @@ These rules define how the AI agent must behave when working on this repository.
 The primary goals are:
 
 - Stay strictly within the user's requested scope.
-- Follow the repository's existing conventions.
+- Follow the repository's existing conventions (see `docs/ARCHITECTURE.md`).
 - Avoid unnecessary refactors or architectural changes.
 - Preserve existing behavior.
 - Keep changes minimal and predictable.
@@ -496,7 +496,7 @@ Do not create new design tokens unless necessary and explicitly approved.
 
 ## 17. UI Consistency
 
-When modifying UI, inspect nearby components and similar screens.
+When modifying UI, inspect nearby components, similar screens, and **always read `docs/DESIGN.md`** for the single source of truth on styles.
 
 Match existing conventions for:
 

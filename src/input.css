@@ -76,3 +76,25 @@
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   mix-blend-mode: normal;
 }
+
+/* Desktop Only Reveal Animation */
+html.transition-circle::view-transition-old(root) {
+  animation: none;
+  z-index: 1;
+}
+
+html.transition-circle::view-transition-new(root) {
+  animation-name: wipe-circle;
+  animation-duration: 0.7s;
+  animation-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  z-index: 2;
+}
+
+@keyframes wipe-circle {
+  from {
+    clip-path: circle(0px at var(--click-x, 50%) var(--click-y, 50%));
+  }
+  to {
+    clip-path: circle(150% at var(--click-x, 50%) var(--click-y, 50%));
+  }
+}

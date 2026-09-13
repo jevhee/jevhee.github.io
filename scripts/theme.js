@@ -15,6 +15,20 @@ const initTheme = () => {
       const isDark = htmlEl.classList.contains('dark');
       const nextTheme = isDark ? 'light' : 'dark';
 
+      htmlEl.classList.remove('transition-circle');
+
+      // Desktop only: use circle wipe reveal animation
+      if (window.innerWidth >= 768) {
+        const rect = btn.getBoundingClientRect();
+        const x = rect.left + rect.width / 2;
+        const y = rect.top + rect.height / 2;
+
+        htmlEl.style.setProperty('--click-x', `${x}px`);
+        htmlEl.style.setProperty('--click-y', `${y}px`);
+
+        htmlEl.classList.add('transition-circle');
+      }
+
       if (!document.startViewTransition) {
         setTheme(nextTheme);
         return;

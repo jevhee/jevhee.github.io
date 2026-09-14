@@ -104,11 +104,20 @@ When creating a new section, ALWAYS use this exact HTML structure for the wrappe
 
 ## 4. Component Styles
 
-### Lists (Timeline, Now, Log)
+### Lists (Timeline, Now)
 
 - **Container**: `flex flex-col gap-1.5` (for items with borders) or `ul space-y-1.5` (for compact text lists).
 - **Icons**: Always aligned to the top `items-start`. Use `mt-[1px]` to perfectly align the icon with the first line of text.
 - **Dates / Meta**: `text-[14px] font-medium text-macchiato-subtext0`.
+
+### Lists with Dashed Dividers (Builds, Log)
+
+To ensure consistent vertical spacing and border rendering, particularly on mobile, follow this exact structure:
+
+- **Container**: `<ul class="list-none pl-0 m-0 space-y-1 -my-3">`
+- **List Item (`<li>`)**: Must only act as a border container without padding. Use classes: `relative text-base text-macchiato-text border-b border-dashed border-macchiato-surface2 sm:border-none last:border-none`.
+- **Inner Content Container**: The actual padding and layout must be placed on the immediate child element (e.g., `<a>` or `<div>`), typically using `py-3` and flex column/row utilities.
+- **Visual Balance (Mobile)**: If the bottom-most element in the flex column (mobile view) is a solid container (like circular buttons) instead of text, add `mb-1 sm:mb-0` to it. This compensates for the missing line-height blank space that text naturally has, keeping the dash divider spacing visually centered.
 
 ### Links
 

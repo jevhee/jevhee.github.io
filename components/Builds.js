@@ -12,7 +12,8 @@ const Builds = (data) => `
       ${data.projects
         .map(
           (project) => `
-        <li class="relative text-base text-macchiato-text flex flex-col sm:flex-row gap-2 sm:gap-4 items-start sm:items-center justify-between py-3 transition-colors border-b border-dashed border-macchiato-surface2 sm:border-none last:border-none">
+        <li class="relative text-base text-macchiato-text border-b border-dashed border-macchiato-surface2 sm:border-none last:border-none">
+          <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 items-start sm:items-center justify-between py-3 transition-colors">
           
           <div class="flex-1 flex flex-col">
             <div class="font-bold text-base sm:text-lg mb-0.5 text-macchiato-text">
@@ -25,7 +26,7 @@ const Builds = (data) => `
             </div>
           </div>
 
-          <div class="flex gap-3 shrink-0 mt-2 sm:mt-0 items-center">
+          <div class="flex gap-3 shrink-0 mt-1 sm:mt-0 mb-1 sm:mb-0 items-center">
             ${
               project.links?.code
                 ? `<a href="${project.links.code}" target="_blank" class="transition-colors flex items-center justify-center w-9 h-9 rounded-full bg-macchiato-blue dark:bg-macchiato-yellow text-macchiato-base dark:text-macchiato-base hover:opacity-80" title="Source Code">
@@ -48,7 +49,7 @@ const Builds = (data) => `
                 : ''
             }
           </div>
-
+          </div>
         </li>
       `,
         )

@@ -90,7 +90,9 @@ function initReadingProgress() {
       if (docHeight <= 0) return;
 
       const scrollPercent = scrollTop / docHeight;
-      progress.style.width = `${scrollPercent * 100}%`;
+      requestAnimationFrame(() => {
+        progress.style.width = `${scrollPercent * 100}%`;
+      });
     },
     { passive: true },
   );

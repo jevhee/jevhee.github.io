@@ -21,7 +21,7 @@ const SITE_CONTENT = {
     items: [
       {
         icon: 'laptop_mac',
-        text: 'Working as a freelancer on various software engineering projects.',
+        text: 'Taking on freelance projects while building solo software products.',
       },
       {
         icon: 'science',
@@ -112,6 +112,13 @@ const SITE_CONTENT = {
         url: 'https://jevhee.medium.com/from-static-iv-to-dynamic-iv-improving-local-storage-encryption-on-android-3ef94cb7b342?sharedUserId=jevhee',
       },
     ],
+  },
+  contact: {
+    title: 'Hire Me',
+    subtitle: 'Open for freelance opportunities and collaborations.',
+    text: 'Whether you have a specific project in mind, need help with an existing product, or just want to chat about technology, I am always open to discussing new ideas.',
+    email: 'jevisa40@gmail.com',
+    buttonText: "Let's build something together",
   },
   colophon: {
     title: 'Colophon',

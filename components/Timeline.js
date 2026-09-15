@@ -13,8 +13,8 @@ const Timeline = (data) => `
         (item) => `
       <div class="flex items-center gap-3 sm:gap-4 text-macchiato-text w-full">
         <span class="font-bold text-base shrink-0 ${item.highlight ? 'text-macchiato-blue dark:text-macchiato-yellow' : ''}">${item.company}</span>
-        <span class="flex-1 border-b border-dashed mt-1.5 ${item.highlight ? 'border-macchiato-blue/50 dark:border-macchiato-yellow/50' : 'border-macchiato-surface2'}"></span>
-        <span class="font-medium text-[14px] shrink-0 whitespace-nowrap ${item.highlight ? 'text-macchiato-blue/80 dark:text-macchiato-yellow/80' : 'text-macchiato-subtext0'}">${item.date}</span>
+        <span class="flex-1 border-b border-dashed mt-1.5 ${item.highlight ? 'border-macchiato-blue dark:border-macchiato-yellow' : 'border-macchiato-surface2'}"></span>
+        <span class="font-medium text-[14px] shrink-0 whitespace-nowrap ${item.highlight ? 'text-macchiato-blue dark:text-macchiato-yellow' : 'text-macchiato-subtext0'}">${item.date}</span>
       </div>
     `,
       )

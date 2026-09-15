@@ -15,7 +15,7 @@ const Now = (data) => `
         .map(
           (item) => `
         <li class="flex items-start gap-2.5 sm:gap-3 text-[15px] sm:text-base text-macchiato-subtext0 font-medium">
-          <span class="shrink-0 mt-[1px] text-macchiato-blue/80 dark:text-macchiato-yellow/80">
+          <span class="shrink-0 mt-[1px] text-macchiato-blue dark:text-macchiato-yellow">
             <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1">${item.icon}</span>
           </span>
           <span class="leading-snug text-macchiato-text">${item.text}</span>

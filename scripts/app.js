@@ -30,21 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
       Footer({ socials: SITE_CONTENT.socials || [], siteInfo: SITE_CONTENT.siteInfo }),
     ].join(separator);
 
-    // Initial state for scroll reveal
-    const sections = contentEl.querySelectorAll('section');
-    sections.forEach((section, index) => {
-      // Skip Prologue (index 0) so it's visible immediately
-      if (index > 0) {
-        section.classList.add(
-          'opacity-0',
-          'translate-y-6',
-          'transition-all',
-          'duration-700',
-          'ease-out',
-        );
-      }
-    });
-
     // Fade-in animation for the main container
     contentEl.classList.add('transition-all', 'duration-500', 'ease-out');
     requestAnimationFrame(() => {
@@ -59,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initMagneticButtons();
   initReadingProgress();
-  initScrollReveal();
   initNavigation();
   initDynamicTitle();
 });
@@ -115,34 +99,6 @@ function initReadingProgress() {
     },
     { passive: true },
   );
-}
-
-function initScrollReveal() {
-  const sections = document.querySelectorAll('#page-content > section');
-  if (!sections.length) return;
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Add visible classes and remove hidden classes
-          entry.target.classList.remove('opacity-0', 'translate-y-6');
-          entry.target.classList.add('opacity-100', 'translate-y-0');
-          // Stop observing once revealed
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.15, // Trigger when 15% of the section is visible
-    },
-  );
-
-  sections.forEach((section, index) => {
-    if (index > 0) observer.observe(section);
-  });
 }
 
 function initNavigation() {

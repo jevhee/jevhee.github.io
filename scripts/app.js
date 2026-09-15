@@ -41,7 +41,74 @@ document.addEventListener('DOMContentLoaded', () => {
   initMagneticButtons();
   initReadingProgress();
   initDynamicTitle();
+  initCustomCursor();
 });
+
+function initCustomCursor() {
+  // Only enable on desktop/fine-pointer devices
+  if (window.innerWidth < 768 || window.matchMedia('(pointer: coarse)').matches) return;
+
+  const cursor = document.getElementById('custom-cursor');
+  if (!cursor) return;
+
+  document.body.classList.add('custom-cursor-active');
+  // Make cursor visible
+  cursor.classList.remove('hidden');
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let cursorX = mouseX;
+  let cursorY = mouseY;
+
+  // Update cursor position smoothly
+  function updateCursor() {
+    cursorX += (mouseX - cursorX) * 0.2;
+    cursorY += (mouseY - cursorY) * 0.2;
+
+    // We update inline styles for transform to avoid Tailwind transition lag on movement
+    cursor.style.transform = `translate(calc(-50% + ${cursorX}px), calc(-50% + ${cursorY}px))`;
+    requestAnimationFrame(updateCursor);
+  }
+  requestAnimationFrame(updateCursor);
+
+  window.addEventListener(
+    'mousemove',
+    (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    },
+    { passive: true },
+  );
+
+  // Add hover effect for interactive elements using delegation
+  document.addEventListener(
+    'mouseover',
+    (e) => {
+      const target = e.target.closest('a, button, [role="button"], .magnetic-btn');
+      if (target) {
+        cursor.style.width = '32px';
+        cursor.style.height = '32px';
+        cursor.style.backgroundColor = 'transparent';
+        cursor.style.border = '1.5px solid white';
+      }
+    },
+    { passive: true },
+  );
+
+  document.addEventListener(
+    'mouseout',
+    (e) => {
+      const target = e.target.closest('a, button, [role="button"], .magnetic-btn');
+      if (target) {
+        cursor.style.width = '12px';
+        cursor.style.height = '12px';
+        cursor.style.backgroundColor = 'white';
+        cursor.style.border = 'none';
+      }
+    },
+    { passive: true },
+  );
+}
 
 function initMagneticButtons() {
   const magnets = document.querySelectorAll('.magnetic-btn');

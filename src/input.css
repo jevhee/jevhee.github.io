@@ -81,6 +81,14 @@
   .dark .bg-dot-pattern {
     background-image: radial-gradient(rgb(var(--color-text) / 0.15) 1px, transparent 1px);
   }
+
+  /* Custom Cursor Toggle */
+  @media (pointer: fine) {
+    body.custom-cursor-active,
+    body.custom-cursor-active * {
+      cursor: none !important;
+    }
+  }
 }
 
 /* View Transitions for Theme Toggle */

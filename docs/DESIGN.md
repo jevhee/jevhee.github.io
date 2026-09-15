@@ -165,6 +165,7 @@ Interactive buttons (e.g., primary call-to-actions, social links, theme toggles)
 ```
 
 - **Required Classes**: `magnetic-btn` on the parent, `magnetic-inner` on the child.
+- **Shape**: Use `rounded-xl` (rounded square) for buttons that contain text. Use `rounded-full w-11 h-11` (circle) for standalone icon buttons (like social links or contact send buttons).
 - **Desktop Only**: The magnetic effect (`app.js`) is strictly configured to only run on desktop screens (>=768px). Do NOT attempt to apply it for mobile touch interactions, as it conflicts with scrolling and tap events.
 - **Pointer Events**: The `pointer-events-none` class on the inner span is strictly necessary to prevent hover flickering when JavaScript calculates mouse coordinates.
 - **Transform Overwrites**: Do NOT use CSS transforms (`translate`) directly on these two elements, as `initMagneticButtons()` overwrites them inline. If you need CSS-based rotation (e.g. for icons), wrap the icon in a _nested_ child span inside `magnetic-inner`.

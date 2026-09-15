@@ -8,7 +8,6 @@ import Log from '../components/Log.js';
 import Colophon from '../components/Colophon.js';
 import Contact from '../components/Contact.js';
 import Footer from '../components/Footer.js';
-import Navigation from '../components/Navigation.js';
 import initTheme from './theme.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -38,13 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Inject floating navigation directly into body
-  document.body.insertAdjacentHTML('beforeend', Navigation());
-
   initTheme();
   initMagneticButtons();
   initReadingProgress();
-  initNavigation();
   initDynamicTitle();
 });
 
@@ -99,62 +94,6 @@ function initReadingProgress() {
     },
     { passive: true },
   );
-}
-
-function initNavigation() {
-  const nav = document.getElementById('floating-nav');
-  const backToTopBtn = document.getElementById('back-to-top');
-
-  if (!nav) return;
-
-  // Auto-hide logic to prevent obstructing content
-  let scrollTimeout;
-  let isHovering = false;
-
-  nav.addEventListener('mouseenter', () => (isHovering = true));
-  nav.addEventListener('mouseleave', () => {
-    isHovering = false;
-    if (window.scrollY > 300) {
-      scrollTimeout = setTimeout(() => {
-        nav.classList.add('translate-y-24', 'opacity-0');
-        nav.classList.remove('translate-y-0', 'opacity-100');
-      }, 2500);
-    }
-  });
-
-  // Show/hide navigation based on scroll position
-  window.addEventListener(
-    'scroll',
-    () => {
-      clearTimeout(scrollTimeout);
-
-      if (window.scrollY > 300) {
-        nav.classList.remove('translate-y-24', 'opacity-0');
-        nav.classList.add('translate-y-0', 'opacity-100');
-
-        if (!isHovering) {
-          scrollTimeout = setTimeout(() => {
-            nav.classList.add('translate-y-24', 'opacity-0');
-            nav.classList.remove('translate-y-0', 'opacity-100');
-          }, 2500);
-        }
-      } else {
-        nav.classList.add('translate-y-24', 'opacity-0');
-        nav.classList.remove('translate-y-0', 'opacity-100');
-      }
-    },
-    { passive: true },
-  );
-
-  // Back to top functionality
-  if (backToTopBtn) {
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-    });
-  }
 }
 
 function initDynamicTitle() {

@@ -19,7 +19,7 @@ const Contact = (data) => {
 
     <ul class="list-none pl-0 m-0 space-y-1 -my-3 border-t border-dashed border-macchiato-surface2 pt-3">
       <li class="relative text-base text-macchiato-text">
-        <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 items-start sm:items-center justify-between py-3 transition-colors">
+        <div class="flex flex-row gap-4 items-center justify-between py-3 transition-colors">
           <div class="flex-1 flex flex-col">
             <div class="font-bold text-base sm:text-lg mb-0.5 text-macchiato-text">
               ${data.actionTitle}
@@ -29,9 +29,11 @@ const Contact = (data) => {
             </div>
           </div>
 
-          <div class="shrink-0 mt-1 sm:mt-0">
-            <a href="mailto:${data.email}" class="font-medium text-macchiato-blue dark:text-macchiato-yellow underline decoration-2 underline-offset-4 decoration-transparent hover:decoration-macchiato-blue dark:hover:decoration-macchiato-yellow transition-colors duration-200 text-[15px] sm:text-base">
-              ${data.email}
+          <div class="shrink-0">
+            <a href="mailto:${data.email}" aria-label="Send email" class="magnetic-btn group relative flex items-center justify-center rounded-xl bg-macchiato-blue text-macchiato-base transition-all duration-300 hover:shadow-lg active:scale-95 dark:bg-macchiato-yellow h-10 w-10 sm:h-11 sm:w-11">
+              <span class="magnetic-inner pointer-events-none flex items-center justify-center transition-transform duration-100 ease-out">
+                <span class="material-symbols-outlined text-[20px] sm:text-[22px]" style="font-variation-settings: 'FILL' 1">send</span>
+              </span>
             </a>
           </div>
         </div>

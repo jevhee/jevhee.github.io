@@ -49,6 +49,8 @@ function initMagneticButtons() {
     const inner = btn.querySelector('.magnetic-inner');
 
     btn.addEventListener('mousemove', (e) => {
+      if (window.innerWidth < 768) return;
+
       const rect = btn.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;

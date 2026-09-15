@@ -177,6 +177,11 @@ Interactive buttons (e.g., primary call-to-actions, social links, theme toggles)
 - **Theme Toggle**: The website uses the native `View Transitions API` for theme toggling.
   - Mobile & Desktop: `Pure Crossfade` (handled by default CSS view-transitions).
   - Desktop-only Override: Circle wipe reveal (`html.transition-circle`).
+- **Scroll Reveal**: Sections fade up dynamically as they enter the viewport using `IntersectionObserver` in `app.js`.
+  - Hidden state: `opacity-0 translate-y-6`
+  - Visible state: `opacity-100 translate-y-0`
+  - Transition: `transition-all duration-700 ease-out`
+  - Exception: The first section (`Prologue`) is excluded from the observer and is always visible on initial load.
 - **General Transitions**: Use `transition-colors duration-300` for smooth color swapping.
 
 ---

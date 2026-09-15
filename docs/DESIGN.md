@@ -104,6 +104,10 @@ When creating a new section, ALWAYS use this exact HTML structure for the wrappe
 
 ## 4. Component Styles
 
+### Typography
+
+- **Long Text / Paragraphs**: All long descriptive text or standalone paragraphs (e.g., Prologue, Colophon, Contact descriptions, Build descriptions) MUST use the `text-justify` class to align text evenly on both the left and right margins. Short single-line list items (e.g. Now.js, Timeline.js) should remain left-aligned.
+
 ### Lists (Timeline, Now)
 
 - **Container**: `flex flex-col gap-1.5` (for items with borders) or `ul space-y-1.5` (for compact text lists).

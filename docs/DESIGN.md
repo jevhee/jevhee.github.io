@@ -110,13 +110,14 @@ When creating a new section, ALWAYS use this exact HTML structure for the wrappe
 - **Icons**: Always aligned to the top `items-start`. Use `mt-[1px]` to perfectly align the icon with the first line of text.
 - **Dates / Meta**: `text-[14px] font-medium text-macchiato-subtext0`.
 
-### Lists with Dashed Dividers (Builds, Log)
+### Lists with Dashed Dividers (Builds, Log, Contact)
 
 To ensure consistent vertical spacing and border rendering, particularly on mobile, follow this exact structure:
 
 - **Container**: `<ul class="list-none pl-0 m-0 space-y-1 -my-3">`
 - **List Item (`<li>`)**: Must only act as a border container without padding. Use classes: `relative text-base text-macchiato-text border-b border-dashed border-macchiato-surface2 sm:border-none last:border-none`.
-- **Inner Content Container**: The actual padding and layout must be placed on the immediate child element (e.g., `<a>` or `<div>`), typically using `py-3` and flex column/row utilities.
+- **Inner Content Container**: The actual padding and layout must be placed on the immediate child element. Typically using `py-3` and flex column/row utilities.
+- **Interactive Links**: If the list item is a full-row link (e.g. Log), the immediate child element MUST be an `<a class="group ... hover:bg-macchiato-surface1/40">`. Use `group-hover:text-macchiato-blue dark:group-hover:text-macchiato-yellow` on text elements inside to highlight them on hover, rather than using the standard inline text hyperlink style.
 - **Visual Balance (Mobile)**: If the bottom-most element in the flex column (mobile view) is a solid container (like circular buttons) instead of text, add `mb-1 sm:mb-0` to it. This compensates for the missing line-height blank space that text naturally has, keeping the dash divider spacing visually centered.
 
 ### Links
@@ -160,6 +161,7 @@ Interactive buttons (e.g., primary call-to-actions, social links, theme toggles)
 ```
 
 - **Required Classes**: `magnetic-btn` on the parent, `magnetic-inner` on the child.
+- **Desktop Only**: The magnetic effect (`app.js`) is strictly configured to only run on desktop screens (>=768px). Do NOT attempt to apply it for mobile touch interactions, as it conflicts with scrolling and tap events.
 - **Pointer Events**: The `pointer-events-none` class on the inner span is strictly necessary to prevent hover flickering when JavaScript calculates mouse coordinates.
 - **Transform Overwrites**: Do NOT use CSS transforms (`translate`) directly on these two elements, as `initMagneticButtons()` overwrites them inline. If you need CSS-based rotation (e.g. for icons), wrap the icon in a _nested_ child span inside `magnetic-inner`.
 

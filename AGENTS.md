@@ -446,7 +446,7 @@ Use:
 
 Never introduce arbitrary hardcoded colors when an established design token exists.
 
-Use existing project classes and CSS variables such as:
+Use existing project classes such as:
 
 ```text
 bg-macchiato-base
@@ -454,7 +454,7 @@ text-macchiato-text
 border-macchiato-surface2
 ```
 
-and their corresponding Latte equivalents.
+Do NOT invent `latte-*` classes. The `macchiato-*` Tailwind classes automatically adapt to Latte (Light Mode) and Macchiato (Dark Mode) via underlying CSS variables.
 
 ---
 
@@ -563,6 +563,8 @@ bun run build
 ```
 
 Only run scripts that actually exist in the repository.
+
+_Note: Running `bun run format` uses Prettier with `prettier-plugin-tailwindcss`. It will automatically sort Tailwind classes. Do not manually reorder them, let Prettier handle it._
 
 Inspect `package.json` first if necessary.
 

@@ -12,32 +12,31 @@ const Contact = (data) => {
     </div>
   </div>
 
-  <div class="group relative flex flex-col items-start justify-center gap-6 overflow-hidden rounded-2xl border border-macchiato-surface2 bg-macchiato-surface0/50 p-6 sm:p-8 transition-colors duration-500 hover:border-macchiato-blue/30 dark:hover:border-macchiato-yellow/30 hover:bg-macchiato-surface1/30">
-    <!-- Status Pill -->
-    <div class="inline-flex items-center gap-2.5 rounded-full border border-macchiato-surface2 bg-macchiato-base px-3.5 py-1.5 text-sm font-medium text-macchiato-subtext1">
-      <div class="relative flex h-2 w-2 shrink-0">
-        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-macchiato-blue/60 dark:bg-macchiato-yellow/60"></span>
-        <span class="relative inline-flex h-2 w-2 rounded-full bg-macchiato-blue dark:bg-macchiato-yellow"></span>
-      </div>
-      Available for work
-    </div>
-
-    <!-- Text -->
-    <p class="text-[15px] max-w-xl leading-relaxed text-macchiato-subtext0 sm:text-base">
+  <div class="flex flex-col">
+    <p class="text-[15px] sm:text-base text-macchiato-subtext0 leading-relaxed mb-6">
       ${data.text}
     </p>
-    
-    <!-- Big Text Link instead of button -->
-    <a href="mailto:${data.email}" class="text-xl sm:text-3xl font-bold tracking-tight text-macchiato-text transition-colors duration-300 underline decoration-2 underline-offset-8 decoration-macchiato-surface2 hover:text-macchiato-blue hover:decoration-macchiato-blue dark:hover:text-macchiato-yellow dark:hover:decoration-macchiato-yellow">
-      ${data.email}
-    </a>
 
-    <!-- Decorative Handwriting Accent -->
-    <div class="absolute -bottom-8 -right-6 -rotate-12 opacity-10 transition-all duration-500 group-hover:-translate-y-4 group-hover:-translate-x-4 group-hover:opacity-40 sm:-right-4 sm:opacity-20 sm:group-hover:opacity-60">
-      <span class="font-handwriting text-7xl text-macchiato-blue dark:text-macchiato-yellow">
-        say hi!
-      </span>
-    </div>
+    <ul class="list-none pl-0 m-0 space-y-1 -my-3 border-t border-dashed border-macchiato-surface2 pt-3">
+      <li class="relative text-base text-macchiato-text">
+        <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 items-start sm:items-center justify-between py-3 transition-colors">
+          <div class="flex-1 flex flex-col">
+            <div class="font-bold text-base sm:text-lg mb-0.5 text-macchiato-text">
+              Say hi or drop a message
+            </div>
+            <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 mt-0.5 text-[13.5px] text-macchiato-subtext0 font-medium">
+              <span>Open for freelance and exciting job opportunities</span>
+            </div>
+          </div>
+
+          <div class="shrink-0 mt-1 sm:mt-0">
+            <a href="mailto:${data.email}" class="text-macchiato-blue hover:text-macchiato-sapphire dark:text-macchiato-yellow dark:hover:text-macchiato-sapphire transition-colors duration-200 underline decoration-2 underline-offset-4 decoration-macchiato-surface2 hover:decoration-macchiato-blue dark:hover:decoration-macchiato-yellow font-bold text-[15px] sm:text-base">
+              ${data.email}
+            </a>
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>
 `;

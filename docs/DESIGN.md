@@ -123,7 +123,7 @@ To ensure consistent vertical spacing and border rendering, particularly on mobi
 
 Links use a thick underline that animates on hover.
 **Standard Link Classes**:
-`text-macchiato-blue hover:text-macchiato-sapphire dark:text-macchiato-yellow dark:hover:text-macchiato-sapphire transition-colors duration-200 underline decoration-2 underline-offset-4 decoration-macchiato-surface2 hover:decoration-macchiato-blue dark:hover:decoration-macchiato-yellow`
+`font-medium text-macchiato-blue dark:text-macchiato-yellow underline decoration-2 underline-offset-4 decoration-transparent hover:decoration-macchiato-blue dark:hover:decoration-macchiato-yellow transition-colors duration-200`
 
 ### Decorative Elements
 

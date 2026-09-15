@@ -30,7 +30,7 @@ const Contact = (data) => {
           </div>
 
           <div class="shrink-0 mt-1 sm:mt-0">
-            <a href="mailto:${data.email}" class="text-macchiato-blue hover:text-macchiato-sapphire dark:text-macchiato-yellow dark:hover:text-macchiato-sapphire transition-colors duration-200 underline decoration-2 underline-offset-4 decoration-macchiato-surface2 hover:decoration-macchiato-blue dark:hover:decoration-macchiato-yellow font-bold text-[15px] sm:text-base">
+            <a href="mailto:${data.email}" class="font-medium text-macchiato-blue dark:text-macchiato-yellow underline decoration-2 underline-offset-4 decoration-transparent hover:decoration-macchiato-blue dark:hover:decoration-macchiato-yellow transition-colors duration-200 text-[15px] sm:text-base">
               ${data.email}
             </a>
           </div>

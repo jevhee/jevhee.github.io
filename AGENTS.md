@@ -637,7 +637,11 @@ Do not accidentally include unrelated files in a commit.
 
 ---
 
-## 24. Commit Scope
+## 24. Commit Scope & Atomic Commits
+
+Commits must be **atomic**. Each commit should represent a single logical change (e.g., one feature, one bug fix, or one refactoring).
+
+Do not bundle multiple unrelated features or fixes into a single commit. If a task involves multiple distinct components or changes, break them down into separate, focused commits.
 
 Only commit files related to the requested task.
 

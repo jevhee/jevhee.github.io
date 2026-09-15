@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>404 - Page Not Found | Jevi Saputra</title>
+    <meta name="title" content="404 - Page Not Found" />
+    <meta name="theme-color" content="#24273A" />
+
+    <link id="favicon" rel="icon" type="image/webp" href="/assets/avatar.webp" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/input.css" />
+  </head>
+
+  <body
+    class="bg-dot-pattern flex min-h-screen flex-col items-center justify-center bg-macchiato-base font-ui text-macchiato-text transition-colors duration-300 selection:bg-macchiato-blue/25 selection:text-macchiato-blue"
+  >
+    <main
+      class="relative z-10 mx-auto flex w-full max-w-lg flex-col items-center justify-center p-6 text-center"
+    >
+      <div
+        class="mb-8 flex h-32 w-32 shrink-0 items-center justify-center overflow-hidden rounded-[2rem] bg-macchiato-blue shadow-xl transition-colors duration-300 dark:bg-macchiato-yellow sm:h-40 sm:w-40"
+      >
+        <span class="text-6xl font-bold text-macchiato-base sm:text-7xl">404</span>
+      </div>
+
+      <h1
+        class="mb-4 text-3xl font-bold leading-tight tracking-tight text-macchiato-text sm:text-4xl"
+      >
+        Oops, you're lost in space.
+      </h1>
+
+      <p
+        class="mx-auto mb-10 max-w-sm text-[15px] leading-relaxed text-macchiato-subtext0 sm:text-base"
+      >
+        We can't seem to find the page you're looking for. It might have been moved or no longer
+        exists.
+      </p>
+
+      <a
+        href="/"
+        class="magnetic-btn group inline-flex items-center gap-2 rounded-xl bg-macchiato-blue px-7 py-3.5 font-bold text-macchiato-base transition-shadow duration-300 hover:shadow-lg active:scale-95 dark:bg-macchiato-yellow"
+      >
+        <span
+          class="magnetic-inner pointer-events-none flex items-center gap-2 transition-transform duration-100 ease-out"
+        >
+          <span
+            class="material-symbols-outlined text-[20px] transition-transform duration-300 group-hover:-translate-x-1"
+            >arrow_back</span
+          >
+          Return to Home
+        </span>
+      </a>
+    </main>
+
+    <script type="module">
+      import initTheme from '/scripts/theme.js';
+
+      document.addEventListener('DOMContentLoaded', () => {
+        initTheme();
+
+        // Simple magnetic button init for 404
+        const btn = document.querySelector('.magnetic-btn');
+        const inner = btn.querySelector('.magnetic-inner');
+
+        btn.addEventListener('mousemove', (e) => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+
+          btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+          if (inner) {
+            inner.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+          }
+        });
+
+        btn.addEventListener('mouseleave', () => {
+          btn.style.transform = 'translate(0px, 0px)';
+          if (inner) {
+            inner.style.transform = 'translate(0px, 0px)';
+          }
+        });
+
+        const main = document.querySelector('main');
+        main.classList.add(
+          'transition-all',
+          'duration-500',
+          'ease-out',
+          'opacity-0',
+          'translate-y-4',
+        );
+        requestAnimationFrame(() => {
+          main.classList.remove('opacity-0', 'translate-y-4');
+          main.classList.add('opacity-100', 'translate-y-0');
+        });
+      });
+    </script>
+  </body>
+</html>

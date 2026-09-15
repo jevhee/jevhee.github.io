@@ -673,29 +673,26 @@ follow this sequence.
 
 ---
 
-## 25. Step 1 — Clean Up
+## 25. Step 1 — Clean Up & Code Optimization
 
+Before finalizing changes, actively analyze the codebase for optimization opportunities and ensure there are no leftover artifacts.
+
+**1. Clean Up:**
 Ensure there are no leftover:
 
-- Temporary files.
-- Debug scripts.
-- Experimental files.
-- Temporary comments.
-- Debug logs.
-- Test artifacts.
-- Unused code, variables, imports, or functions.
-- Dead code paths that are no longer reachable.
+- Temporary files (e.g., `clean_app.js`, `temp.js`, `debug.js`).
+- Debug scripts or test artifacts.
+- Temporary comments or console logs.
+  Do not delete unknown files without determining whether they belong to the user.
 
-Examples:
+**2. Optimize & Refactor:**
 
-```text
-clean_app.js
-temp.js
-debug.js
-test-output.txt
-```
+- **Remove Redundancy**: Eliminate duplicate Tailwind classes, unused CSS, and redundant HTML structures.
+- **Refactor Duplicates**: If a block of code or UI element is repeated identically multiple times, extract it into a reusable function or component.
+- **Remove Dead Code**: Actively delete unused variables, uncalled functions, unused imports, and unreachable code paths.
+- **JS Performance**: Ensure event listeners are properly delegated where applicable and avoid unnecessary DOM manipulations.
 
-Do not delete unknown files without determining whether they belong to the user.
+_(Note: Only perform these optimizations if they are 100% safe and do not alter the existing application behavior as per Rule 4)._
 
 ---
 

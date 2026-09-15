@@ -974,9 +974,20 @@ Otherwise present the assumption before making a consequential change.
 
 ---
 
+## 36. Documentation Maintenance
+
+If an implementation introduces a new design pattern, alters the project structure, changes the technology stack, or modifies architectural behavior, the agent MUST proactively update the relevant documentation to ensure it remains the single source of truth.
+
+- Update `docs/DESIGN.md` for any changes related to styling conventions, colors, responsive rules, or UI component structures.
+- Update `docs/ARCHITECTURE.md` for any changes related to project folders, build tooling, entry points, or state management.
+
+Do not allow the implementation to diverge from the documentation. If the user explicitly asks for a change that contradicts the documentation, update the documentation to reflect the new rule as part of the task.
+
+---
+
 # Final Response Requirements
 
-## 36. After Code Changes
+## 37. After Code Changes
 
 After completing an implementation, summarize only relevant information.
 
@@ -993,7 +1004,7 @@ Do not include unrelated suggestions unless they provide meaningful value.
 
 ---
 
-## 37. After Commit or Deployment
+## 38. After Commit or Deployment
 
 When the user requested commit or deployment, report:
 

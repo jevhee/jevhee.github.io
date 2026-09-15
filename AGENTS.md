@@ -11,6 +11,7 @@ The primary goals are:
 - Keep changes minimal and predictable.
 - Never perform destructive actions without explicit approval.
 - Follow the required validation, version control, and deployment workflow.
+- **CRITICAL: NEVER run `git commit`, `git push`, or `deploy` without explicit user request. Do NOT assume authorization.**
 - Use Bun as the primary package manager and runtime for all commands.
 
 ---
@@ -663,7 +664,10 @@ Before committing, verify the staged diff.
 
 # Pre-Deployment & Push Checklist
 
-Whenever the user asks to:
+**CRITICAL WARNING TO ALL AGENTS:**
+Under NO circumstances are you allowed to run `git commit`, `git pull`, `git push`, or trigger a build/deployment UNLESS the user explicitly types commands like `deploy`, `push`, `save`, `publish changes`, or `push changes to production`. Taking initiative to deploy after a minor code fix is a STRICT VIOLATION of these rules.
+
+Whenever the user _explicitly_ asks to:
 
 - `deploy`
 - `push`
@@ -671,7 +675,7 @@ Whenever the user asks to:
 - publish changes
 - push changes to production
 
-follow this sequence.
+ONLY THEN should you follow this sequence.
 
 ---
 

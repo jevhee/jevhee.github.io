@@ -1,6 +1,6 @@
 # Design System & Guidelines (jevhee.github.io)
 
-This document serves as the single source of truth for the visual design, spacing, typography, and component structures of this project. AI Agents MUST refer to these guidelines before implementing new UI or modifying existing ones to ensure consistency.
+This document serves as the single source of truth for the visual design, spacing, typography, and component structures of this project. AI Agents MUST refer to these guidelines before implementing new UI or modifying existing ones to ensure consistency, and MUST always prioritize the strict behavioral rules defined in `AGENTS.md`.
 
 ## 1. Design Tokens
 
@@ -174,4 +174,4 @@ Interactive buttons (e.g., primary call-to-actions, social links, theme toggles)
 
 ---
 
-_Note to Agents: When updating the UI, always read this file first. A consistent visual language is more important than subjective improvements._
+_Note to Agents: When updating the UI, always read this file first. A consistent visual language is more important than subjective improvements. Before making any changes, ALWAYS ensure you are compliant with `AGENTS.md`._

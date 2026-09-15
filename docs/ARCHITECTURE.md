@@ -1,6 +1,6 @@
 # Architecture Guidelines (jevhee.github.io)
 
-This document outlines the technical architecture and data flow of this project. AI Agents MUST adhere to this architecture when modifying the codebase.
+This document outlines the technical architecture and data flow of this project. AI Agents MUST adhere to this architecture when modifying the codebase, and MUST always prioritize the strict behavioral rules defined in `AGENTS.md`.
 
 Do NOT introduce UI frameworks (React, Vue, Svelte) or complex build tools. This project is intentionally built with Vanilla JavaScript, Vite, and Tailwind CSS.
 
@@ -81,4 +81,4 @@ contentContainer.innerHTML = [Example(SITE_CONTENT.exampleData)].join('');
 
 ---
 
-_Note to Agents: Respect the simplicity of this architecture. Do not over-engineer solutions, and do not introduce state-management libraries._
+_Note to Agents: Respect the simplicity of this architecture. Do not over-engineer solutions, and do not introduce state-management libraries. Before making any changes, ALWAYS ensure you are compliant with `AGENTS.md`._

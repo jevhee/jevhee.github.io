@@ -29,7 +29,8 @@ const initTheme = () => {
         htmlEl.classList.add('transition-circle');
       }
 
-      if (!document.startViewTransition) {
+      // Mobile: fallback to CSS transitions to preserve icon animation
+      if (window.innerWidth < 768 || !document.startViewTransition) {
         setTheme(nextTheme);
         return;
       }

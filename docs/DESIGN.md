@@ -174,9 +174,9 @@ Interactive buttons (e.g., primary call-to-actions, social links, theme toggles)
 
 ## 5. Animations
 
-- **Theme Toggle**: The website uses the native `View Transitions API` for theme toggling.
-  - Mobile & Desktop: `Pure Crossfade` (handled by default CSS view-transitions).
-  - Desktop-only Override: Circle wipe reveal (`html.transition-circle`).
+- **Theme Toggle**: The website uses a hybrid approach for theme toggling transitions.
+  - Mobile: Native CSS transitions (`transition-colors duration-300`) to preserve smooth icon rotation.
+  - Desktop: `View Transitions API` with a custom circle wipe reveal (`html.transition-circle`).
 - **General Transitions**: Use `transition-colors duration-300` for smooth color swapping.
 
 ---

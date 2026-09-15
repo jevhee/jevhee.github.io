@@ -13,7 +13,7 @@ const Contact = (data) => {
   </div>
 
   <div class="flex flex-col">
-    <p class="text-[15px] sm:text-base text-macchiato-subtext0 leading-relaxed mb-6">
+    <p class="text-justify text-[15px] sm:text-base text-macchiato-subtext0 leading-relaxed mb-6">
       ${data.text}
     </p>
 

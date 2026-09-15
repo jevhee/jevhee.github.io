@@ -8,7 +8,7 @@ const Colophon = (data) => `
   </div>
   
   <div class="flex flex-col">
-    <p class="text-base text-macchiato-subtext0 leading-relaxed [&>a]:font-medium [&>a]:text-macchiato-blue dark:[&>a]:text-macchiato-yellow [&>a]:underline [&>a]:decoration-2 [&>a]:underline-offset-4 [&>a]:decoration-transparent hover:[&>a]:decoration-macchiato-blue dark:hover:[&>a]:decoration-macchiato-yellow [&>a]:transition-colors [&>a]:duration-200">
+    <p class="text-justify text-base text-macchiato-subtext0 leading-relaxed [&>a]:font-medium [&>a]:text-macchiato-blue dark:[&>a]:text-macchiato-yellow [&>a]:underline [&>a]:decoration-2 [&>a]:underline-offset-4 [&>a]:decoration-transparent hover:[&>a]:decoration-macchiato-blue dark:hover:[&>a]:decoration-macchiato-yellow [&>a]:transition-colors [&>a]:duration-200">
       ${data.text}
     </p>
   </div>

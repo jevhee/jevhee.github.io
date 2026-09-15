@@ -19,7 +19,7 @@ const Builds = (data) => `
             <div class="font-bold text-base sm:text-lg mb-0.5 text-macchiato-text">
               ${project.title}
             </div>
-            <p class="leading-relaxed text-[14px] text-macchiato-subtext1 mb-1.5">${project.description}</p>
+            <p class="text-justify leading-relaxed text-[14px] text-macchiato-subtext1 mb-1.5">${project.description}</p>
             
             <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 mt-0.5 text-[13.5px] text-macchiato-subtext0 font-medium">
               ${project.stack.map((tech, index) => `<span>${tech}</span>${index < project.stack.length - 1 ? '<span class="opacity-30 font-bold text-[12px]">/</span>' : ''}`).join('')}

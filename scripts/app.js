@@ -151,14 +151,37 @@ function initNavigation() {
 
   if (!nav) return;
 
+  // Auto-hide logic to prevent obstructing content
+  let scrollTimeout;
+  let isHovering = false;
+
+  nav.addEventListener('mouseenter', () => (isHovering = true));
+  nav.addEventListener('mouseleave', () => {
+    isHovering = false;
+    if (window.scrollY > 300) {
+      scrollTimeout = setTimeout(() => {
+        nav.classList.add('translate-y-24', 'opacity-0');
+        nav.classList.remove('translate-y-0', 'opacity-100');
+      }, 2500);
+    }
+  });
+
   // Show/hide navigation based on scroll position
   window.addEventListener(
     'scroll',
     () => {
-      // Show when scrolled past 300px
+      clearTimeout(scrollTimeout);
+
       if (window.scrollY > 300) {
         nav.classList.remove('translate-y-24', 'opacity-0');
         nav.classList.add('translate-y-0', 'opacity-100');
+
+        if (!isHovering) {
+          scrollTimeout = setTimeout(() => {
+            nav.classList.add('translate-y-24', 'opacity-0');
+            nav.classList.remove('translate-y-0', 'opacity-100');
+          }, 2500);
+        }
       } else {
         nav.classList.add('translate-y-24', 'opacity-0');
         nav.classList.remove('translate-y-0', 'opacity-100');

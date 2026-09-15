@@ -8,6 +8,7 @@ import Log from '../components/Log.js';
 import Colophon from '../components/Colophon.js';
 import Contact from '../components/Contact.js';
 import Footer from '../components/Footer.js';
+import Navigation from '../components/Navigation.js';
 import initTheme from './theme.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -52,10 +53,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Inject floating navigation directly into body
+  document.body.insertAdjacentHTML('beforeend', Navigation());
+
   initTheme();
   initMagneticButtons();
   initReadingProgress();
   initScrollReveal();
+  initNavigation();
+  initDynamicTitle();
 });
 
 function initMagneticButtons() {
@@ -136,5 +142,50 @@ function initScrollReveal() {
 
   sections.forEach((section, index) => {
     if (index > 0) observer.observe(section);
+  });
+}
+
+function initNavigation() {
+  const nav = document.getElementById('floating-nav');
+  const backToTopBtn = document.getElementById('back-to-top');
+
+  if (!nav) return;
+
+  // Show/hide navigation based on scroll position
+  window.addEventListener(
+    'scroll',
+    () => {
+      // Show when scrolled past 300px
+      if (window.scrollY > 300) {
+        nav.classList.remove('translate-y-24', 'opacity-0');
+        nav.classList.add('translate-y-0', 'opacity-100');
+      } else {
+        nav.classList.add('translate-y-24', 'opacity-0');
+        nav.classList.remove('translate-y-0', 'opacity-100');
+      }
+    },
+    { passive: true },
+  );
+
+  // Back to top functionality
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    });
+  }
+}
+
+function initDynamicTitle() {
+  const originalTitle = document.title;
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      document.title = 'Miss you! come back 🥺';
+    } else {
+      document.title = originalTitle;
+    }
   });
 }

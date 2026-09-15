@@ -85,9 +85,7 @@ When creating a new section, ALWAYS use this exact HTML structure for the wrappe
 <section class="flex scroll-mt-20 flex-col" id="section-name">
   <!-- Header -->
   <div class="mb-6 flex flex-col gap-1">
-    <h2 class="text-3xl font-bold leading-tight tracking-tight text-macchiato-text sm:text-3xl">
-      Section Title
-    </h2>
+    <h2 class="text-3xl font-bold leading-tight tracking-tight text-macchiato-text sm:text-3xl">Section Title</h2>
     <div class="prose prose-xl relative max-w-none overflow-hidden text-macchiato-text">
       <p>Section Subtitle</p>
     </div>
@@ -139,11 +137,8 @@ Links use a thick underline that animates on hover.
 ```html
 <div class="relative flex h-3 w-3 shrink-0">
   <span
-    class="absolute inline-flex h-full w-full animate-ping rounded-full bg-macchiato-blue/60 dark:bg-macchiato-yellow/60"
-  ></span>
-  <span
-    class="relative inline-flex h-3 w-3 rounded-full bg-macchiato-blue dark:bg-macchiato-yellow"
-  ></span>
+    class="absolute inline-flex h-full w-full animate-ping rounded-full bg-macchiato-blue/60 dark:bg-macchiato-yellow/60"></span>
+  <span class="relative inline-flex h-3 w-3 rounded-full bg-macchiato-blue dark:bg-macchiato-yellow"></span>
 </div>
 ```
 
@@ -153,12 +148,10 @@ Interactive buttons (e.g., primary call-to-actions, social links, theme toggles)
 
 ```html
 <button
-  class="magnetic-btn group relative flex items-center justify-center rounded-xl bg-macchiato-blue text-macchiato-base transition-all duration-300 hover:shadow-lg active:scale-95 dark:bg-macchiato-yellow"
->
+  class="magnetic-btn group relative flex items-center justify-center rounded-xl bg-macchiato-blue text-macchiato-base transition-all duration-300 hover:shadow-lg active:scale-95 dark:bg-macchiato-yellow">
   <!-- The inner span is required for the parallax effect -->
   <span
-    class="magnetic-inner pointer-events-none flex items-center justify-center transition-transform duration-100 ease-out"
-  >
+    class="magnetic-inner pointer-events-none flex items-center justify-center transition-transform duration-100 ease-out">
     Button Text or Icon
   </span>
 </button>

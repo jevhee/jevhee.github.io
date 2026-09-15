@@ -4,13 +4,7 @@ export default {
   future: {
     hoverOnlyWhenSupported: true,
   },
-  content: [
-    './index.html',
-    './404.html',
-    './components/**/*.js',
-    './scripts/**/*.js',
-    './data/**/*.js',
-  ],
+  content: ['./index.html', './404.html', './components/**/*.js', './scripts/**/*.js', './data/**/*.js'],
 
   theme: {
     extend: {

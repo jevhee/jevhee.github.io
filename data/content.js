@@ -68,8 +68,7 @@ const SITE_CONTENT = {
       {
         title: 'Secure Store',
         stack: ['Android', 'Kotlin', 'Jetpack Security'],
-        description:
-          'Secure key-value storage library for Android using Android Keystore and encryption.',
+        description: 'Secure key-value storage library for Android using Android Keystore and encryption.',
         links: {
           code: 'https://github.com/jevhee/secure-store',
         },
@@ -77,8 +76,7 @@ const SITE_CONTENT = {
       {
         title: 'Literal Shield',
         stack: ['Android', 'Gradle Plugin', 'Kotlin'],
-        description:
-          'Android Gradle plugin for obfuscating selected string literals in internal modules.',
+        description: 'Android Gradle plugin for obfuscating selected string literals in internal modules.',
         links: {
           code: 'https://github.com/jevhee/literal-shield',
         },
@@ -90,8 +88,7 @@ const SITE_CONTENT = {
     subtitle: 'Technical writings and engineering notes.',
     articles: [
       {
-        title:
-          'From One Encryption Scheme to Many: Designing a Versioned Encryption Layer on Android',
+        title: 'From One Encryption Scheme to Many: Designing a Versioned Encryption Layer on Android',
         date: 'Sep 2026',
         readTime: '7 min read',
         category: 'Mobile Security',

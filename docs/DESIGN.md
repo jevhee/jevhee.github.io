@@ -142,6 +142,27 @@ Links use a thick underline that animates on hover.
 </div>
 ```
 
+### Buttons (Magnetic Effect)
+
+Interactive buttons (e.g., primary call-to-actions, social links, theme toggles) use a JavaScript-driven magnetic hover effect. When creating a new magnetic button, use the following exact structure:
+
+```html
+<button
+  class="magnetic-btn group relative flex items-center justify-center rounded-xl bg-macchiato-blue text-macchiato-base transition-all duration-300 hover:shadow-lg active:scale-95 dark:bg-macchiato-yellow"
+>
+  <!-- The inner span is required for the parallax effect -->
+  <span
+    class="magnetic-inner pointer-events-none flex items-center justify-center transition-transform duration-100 ease-out"
+  >
+    Button Text or Icon
+  </span>
+</button>
+```
+
+- **Required Classes**: `magnetic-btn` on the parent, `magnetic-inner` on the child.
+- **Pointer Events**: The `pointer-events-none` class on the inner span is strictly necessary to prevent hover flickering when JavaScript calculates mouse coordinates.
+- **Transform Overwrites**: Do NOT use CSS transforms (`translate`) directly on these two elements, as `initMagneticButtons()` overwrites them inline. If you need CSS-based rotation (e.g. for icons), wrap the icon in a _nested_ child span inside `magnetic-inner`.
+
 ---
 
 ## 5. Animations

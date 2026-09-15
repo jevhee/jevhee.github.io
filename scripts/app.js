@@ -45,15 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initCustomCursor() {
-  // Only enable on desktop/fine-pointer devices
-  if (window.innerWidth < 768 || window.matchMedia('(pointer: coarse)').matches) return;
-
   const cursor = document.getElementById('custom-cursor');
   if (!cursor) return;
 
-  document.body.classList.add('custom-cursor-active');
-  // Make cursor visible
-  cursor.classList.remove('hidden');
+  function checkCursorVisibility() {
+    const isDesktop = window.innerWidth >= 768 && window.matchMedia('(pointer: fine)').matches;
+    if (isDesktop) {
+      document.body.classList.add('custom-cursor-active');
+    } else {
+      document.body.classList.remove('custom-cursor-active');
+    }
+  }
+
+  // Initial check and resize listener
+  checkCursorVisibility();
+  window.addEventListener('resize', checkCursorVisibility, { passive: true });
 
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 2;
@@ -62,11 +68,13 @@ function initCustomCursor() {
 
   // Update cursor position smoothly
   function updateCursor() {
-    cursorX += (mouseX - cursorX) * 0.2;
-    cursorY += (mouseY - cursorY) * 0.2;
+    if (document.body.classList.contains('custom-cursor-active')) {
+      cursorX += (mouseX - cursorX) * 0.2;
+      cursorY += (mouseY - cursorY) * 0.2;
 
-    // We update inline styles for transform to avoid Tailwind transition lag on movement
-    cursor.style.transform = `translate(calc(-50% + ${cursorX}px), calc(-50% + ${cursorY}px))`;
+      // We update inline styles for transform to avoid Tailwind transition lag on movement
+      cursor.style.transform = `translate(calc(-50% + ${cursorX}px), calc(-50% + ${cursorY}px))`;
+    }
     requestAnimationFrame(updateCursor);
   }
   requestAnimationFrame(updateCursor);

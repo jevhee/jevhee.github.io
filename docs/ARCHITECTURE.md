@@ -12,7 +12,9 @@ Do NOT introduce UI frameworks (React, Vue, Svelte) or complex build tools. This
 ├── scripts/          # Application logic and entry points (app.js, theme.js)
 ├── src/              # Global styles (input.css)
 ├── index.html        # Main HTML skeleton
-└── tailwind.config.js
+├── 404.html          # Custom Not Found page
+├── vite.config.js    # Vite configuration (ES Modules)
+└── tailwind.config.js # Tailwind CSS configuration (ES Modules)
 ```
 
 ## 2. Component Architecture (Vanilla JS)
@@ -49,9 +51,12 @@ All dynamic content is strictly decoupled from the UI and centralized in `data/c
 2. If adding a new section or modifying content, update `data/content.js`.
 3. The `SITE_CONTENT` object is exported and passed down to components via `scripts/app.js`.
 
-## 4. Application Entry Point (`scripts/app.js`)
+## 4. Application Entry Points
 
-The `app.js` file acts as the controller. It:
+The project relies on Vite for bundling multiple entry points (e.g., `index.html` and `404.html`) configured in `vite.config.js`.
+
+**Main Logic (`scripts/app.js`)**:
+The `app.js` file acts as the primary controller for the main page. It:
 
 1. Imports all necessary components.
 2. Imports the `SITE_CONTENT` object from `data/content.js`.

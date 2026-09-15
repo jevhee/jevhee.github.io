@@ -6,6 +6,7 @@ import Timeline from '../components/Timeline.js';
 import Builds from '../components/Builds.js';
 import Log from '../components/Log.js';
 import Colophon from '../components/Colophon.js';
+import Contact from '../components/Contact.js';
 import Footer from '../components/Footer.js';
 import initTheme from './theme.js';
 
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       Timeline(SITE_CONTENT.timeline),
       Builds(SITE_CONTENT.builds),
       Log(SITE_CONTENT.log),
+      Contact(SITE_CONTENT.contact),
       Colophon(SITE_CONTENT.colophon),
       Footer({ socials: SITE_CONTENT.socials || [], siteInfo: SITE_CONTENT.siteInfo }),
     ].join(separator);
@@ -51,9 +53,14 @@ function initMagneticButtons() {
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;
 
-      btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+      // Increase strength for smaller buttons (like circular icon buttons)
+      const isSmall = rect.width < 80;
+      const strength = isSmall ? 0.6 : 0.2;
+      const innerStrength = isSmall ? 0.3 : 0.1;
+
+      btn.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
       if (inner) {
-        inner.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+        inner.style.transform = `translate(${x * innerStrength}px, ${y * innerStrength}px)`;
       }
     });
 

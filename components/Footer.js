@@ -4,8 +4,10 @@ const Footer = ({ socials, siteInfo }) => `
       ${socials
         .map(
           (social) => `
-        <a href="${social.url}" target="_blank" class="text-macchiato-overlay0 hover:text-macchiato-blue dark:hover:text-macchiato-yellow transition-colors [&>svg]:w-7 [&>svg]:h-7" title="${social.label}">
-          ${social.iconSvg}
+        <a href="${social.url}" target="_blank" class="magnetic-btn group relative flex items-center justify-center w-11 h-11 rounded-full bg-macchiato-blue dark:bg-macchiato-yellow text-macchiato-base hover:shadow-lg active:scale-95 transition-all duration-300" title="${social.label}">
+          <span class="magnetic-inner flex items-center justify-center pointer-events-none transition-transform duration-100 ease-out [&>svg]:w-5 [&>svg]:h-5">
+            ${social.iconSvg}
+          </span>
         </a>
       `,
         )

@@ -22,10 +22,10 @@ const Contact = (data) => {
         <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 items-start sm:items-center justify-between py-3 transition-colors">
           <div class="flex-1 flex flex-col">
             <div class="font-bold text-base sm:text-lg mb-0.5 text-macchiato-text">
-              Say hi or drop a message
+              ${data.actionTitle}
             </div>
             <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 mt-0.5 text-[13.5px] text-macchiato-subtext0 font-medium">
-              <span>Open for freelance and exciting job opportunities</span>
+              <span>${data.actionSubtitle}</span>
             </div>
           </div>
 

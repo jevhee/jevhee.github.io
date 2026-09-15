@@ -114,11 +114,12 @@ const SITE_CONTENT = {
     ],
   },
   contact: {
-    title: 'Hire Me',
-    subtitle: 'Open for freelance opportunities and collaborations.',
-    text: 'Whether you have a specific project in mind, need help with an existing product, or just want to chat about technology, I am always open to discussing new ideas.',
+    title: 'Contact',
+    subtitle: "Let's build something great together.",
+    text: 'Whether you have a specific project in mind, an exciting full-time opportunity, or just want to chat about technology, I am always open to discussing new ideas.',
     email: 'jevisa40@gmail.com',
-    buttonText: "Let's build something together",
+    actionTitle: 'Say hi or drop a message',
+    actionSubtitle: 'Open for freelance and exciting job opportunities',
   },
   colophon: {
     title: 'Colophon',
